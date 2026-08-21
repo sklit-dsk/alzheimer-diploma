@@ -17,7 +17,7 @@ Do not overwrite historical experiment results when methodology changes.
 | E02 | Cohort construction / age control | Completed |
 | E03 | Clean Random Forest baseline | Completed |
 | E04 | Subject-level aggregation | Completed |
-| E05 | Threshold and sensitivity-specificity analysis | Planned |
+| E05 | Threshold and sensitivity-specificity analysis | Current / in progress |
 | E06 | Corrected Feature Importance | Planned |
 | E07 | Transfer-learning CNN | Planned |
 | E08 | CNN subject-level evaluation | Planned |
@@ -558,7 +558,7 @@ Threshold behavior must be analyzed in E05 before final model-performance claims
 
 ## Status
 
-Planned.
+Current / in progress.
 
 ## Objective
 
@@ -571,6 +571,43 @@ Special attention should be paid to:
 - trade-off between sensitivity and specificity.
 
 The final interpretation should not depend only on the default threshold of 0.5.
+
+## Planned input
+
+E05 uses the E04 subject-level prediction table:
+
+- `experiments/E04_subject_level/results/subject_level_predictions.csv`
+
+The primary score for threshold analysis is `mean_probability`.
+
+Mean probability is used as the primary working aggregation from E04 because it provides a direct continuous subject-level score and can later be applied consistently to CNN outputs. This is a methodological working choice, not proof that mean aggregation is clinically optimal.
+
+## Planned methodology
+
+E05 evaluates a predefined threshold grid from 0.10 to 0.90 in increments of 0.05.
+
+Very mild Dementia is the positive class.
+
+For each threshold, the prediction rule is:
+
+- Very mild Dementia if `mean_probability >= threshold`;
+- Non Demented otherwise.
+
+E05 must calculate subject-level sensitivity, specificity, balanced accuracy, precision, F1 and confusion-matrix counts across the predefined grid.
+
+ROC-AUC and PR-AUC must be calculated from the continuous subject-level `mean_probability` score, not separately for each binary threshold.
+
+The default threshold of 0.50 remains the E04 reference point and must reproduce the confirmed E04 mean-probability metrics.
+
+## Interpretation rules
+
+E05 is descriptive threshold analysis on the existing E03/E04 29-subject test set.
+
+It must not be treated as deployment threshold optimization.
+
+No threshold identified in E05 should be described as optimal, validated, clinically recommended, or final.
+
+Validated threshold selection would require an independent validation cohort or nested cross-validation.
 
 ---
 
