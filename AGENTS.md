@@ -334,7 +334,7 @@ Current working hypothesis:
 
 Primjenom metoda mašinskog učenja na MRI snimke mozga moguće je ostvariti razlikovanje subjekata bez demencije od subjekata sa veoma blagim stadijumom demencije, pri čemu kontrola sastava kohorte i evaluacija na nivou subjekta omogućavaju metodološki pouzdaniju procjenu performansi modela.
 
-The hypothesis is provisional and may be refined based on experimental evidence and supervisor feedback.
+The hypothesis is provisional and may be refined based on experimental evidence and documented methodological reasoning.
 
 ---
 

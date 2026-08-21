@@ -40,7 +40,7 @@ U kojoj mjeri metode mašinskog učenja zasnovane na MRI snimcima mogu razlikova
 
 Primjenom metoda mašinskog učenja na MRI snimke mozga moguće je ostvariti razlikovanje subjekata bez demencije od subjekata sa veoma blagim stadijumom demencije, pri čemu kontrola sastava kohorte i evaluacija na nivou subjekta omogućavaju metodološki pouzdaniju procjenu performansi modela.
 
-The hypothesis is provisional and may be refined after further analysis and supervisor feedback.
+The hypothesis is provisional and may be refined after further analysis if experimental evidence or methodological reasoning requires it.
 
 ---
 
@@ -227,3 +227,27 @@ Current active experiment:
 E01 — Clinical metadata and confounder analysis
 
 The next technical objective is to obtain and connect clinical metadata with ImagesOASIS subject identifiers and analyze potential confounding factors before modifying the baseline model.
+
+---
+
+## Immediate delivery strategy
+
+The project is currently being developed toward a complete first working version of the diploma.
+
+Development must prioritize a coherent end-to-end research result over optional optimization.
+
+The minimum target for the first working version is:
+
+1. clinical metadata and confounder analysis;
+2. justified cohort construction;
+3. corrected Random Forest baseline;
+4. subject-level evaluation;
+5. threshold analysis;
+6. corrected Feature Importance;
+7. initial transfer-learning CNN;
+8. subject-level CNN evaluation;
+9. preliminary Random Forest vs CNN comparison;
+10. initial information-system prototype;
+11. complete thesis draft based only on confirmed results.
+
+Optional improvements must not delay the first complete version.
