@@ -2,9 +2,9 @@
 
 ## Status
 
-Implemented, not yet confirmed.
+Completed.
 
-`analyze_thresholds.py` has been prepared. E05 should not be marked completed until the script is executed successfully and the generated outputs are reviewed.
+`analyze_thresholds.py` was executed successfully and the confirmed outputs are saved in `results/`.
 
 ## Objective
 
@@ -130,7 +130,7 @@ These are not optimal thresholds, validated thresholds, clinically recommended t
 
 ## Generated Outputs
 
-When executed, the script writes outputs to `experiments/E05_threshold_analysis/results/`:
+The script wrote outputs to `experiments/E05_threshold_analysis/results/`:
 
 - `threshold_metrics.csv`
 - `roc_curve_points.csv`
@@ -142,6 +142,53 @@ When executed, the script writes outputs to `experiments/E05_threshold_analysis/
 - `subject_probability_distribution.png`
 - `descriptive_operating_points.csv`
 - `e05_summary.json`
+
+## Confirmed Results
+
+E05 evaluated 29 subject-level E04 predictions:
+
+| Class | Subjects |
+|---|---:|
+| Non Demented | 17 |
+| Very mild Dementia | 12 |
+| Total | 29 |
+
+The default threshold `0.50` reproduced the confirmed E04 mean-probability result:
+
+| Metric | Value |
+|---|---:|
+| Sensitivity | 0.4166666666666667 |
+| Specificity | 0.7647058823529411 |
+| Balanced accuracy | 0.5906862745098039 |
+| Precision | 0.5555555555555556 |
+| F1 positive | 0.47619047619047616 |
+
+Confusion matrix at threshold `0.50`:
+
+| Actual / Predicted | Non Demented | Very mild Dementia |
+|---|---:|---:|
+| Non Demented | 13 | 4 |
+| Very mild Dementia | 7 | 5 |
+
+Continuous-score metrics:
+
+| Metric | Value |
+|---|---:|
+| ROC-AUC | 0.6568627450980392 |
+| PR-AUC / average precision | 0.5628292497835842 |
+
+Descriptive operating points from the predefined grid:
+
+| Operating point | Threshold | Sensitivity | Specificity | Balanced accuracy | Precision | F1 positive |
+|---|---:|---:|---:|---:|---:|---:|
+| Highest balanced accuracy in grid | 0.4 | 0.9166666666666666 | 0.47058823529411764 | 0.6936274509803921 | 0.55 | 0.6875 |
+| Sensitivity/specificity closest in grid | 0.45 | 0.5833333333333334 | 0.5882352941176471 | 0.5857843137254902 | 0.5 | 0.5384615384615384 |
+| Highest threshold with sensitivity at least 0.70 | 0.4 | 0.9166666666666666 | 0.47058823529411764 | 0.6936274509803921 | 0.55 | 0.6875 |
+| Highest threshold with sensitivity at least 0.80 | 0.4 | 0.9166666666666666 | 0.47058823529411764 | 0.6936274509803921 | 0.55 | 0.6875 |
+
+The lowest threshold with sensitivity at least `0.70` and at least `0.80` was `0.10`, with sensitivity `1.0` and specificity `0.0`.
+
+No final, optimal, clinically recommended, or independently validated threshold was selected.
 
 ## Methodological Interpretation
 

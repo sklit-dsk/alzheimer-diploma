@@ -2,9 +2,9 @@
 
 ## Status
 
-Implemented, not yet confirmed.
+Completed.
 
-E08 must not be marked completed until `aggregate_cnn_subject_predictions.py` has been executed successfully and the generated outputs have been reviewed.
+`aggregate_cnn_subject_predictions.py` was executed successfully and the confirmed outputs are saved in `results/`.
 
 ## Objective
 
@@ -95,7 +95,7 @@ No threshold optimization is performed in E08. Any later CNN threshold trade-off
 
 ## Generated Outputs
 
-The script writes:
+The script wrote:
 
 - `results/subject_level_predictions.csv`;
 - `results/mean_probability_metrics.json`;
@@ -109,6 +109,37 @@ The script writes:
 - `results/majority_vote_confusion_matrix.png`;
 - `results/aggregation_comparison.csv`;
 - `results/e08_summary.json`.
+
+## Confirmed Results
+
+The E08 frozen CNN test set contains:
+
+| Class | Subjects |
+|---|---:|
+| Non Demented | 17 |
+| Very mild Dementia | 12 |
+| Total | 29 |
+
+The test set contains 6,954 slice predictions.
+
+All E08 metrics are calculated from exactly one row per subject.
+
+Aggregation comparison:
+
+| Method | Accuracy | Balanced accuracy | Sensitivity | Specificity | Precision | F1 positive | Macro F1 | ROC-AUC | PR-AUC |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Mean probability | 0.7241379310344828 | 0.7034313725490196 | 0.5833333333333334 | 0.8235294117647058 | 0.7 | 0.6363636363636364 | 0.7070707070707071 | 0.6911764705882353 | 0.6007440476190475 |
+| Median probability | 0.6896551724137931 | 0.6740196078431373 | 0.5833333333333334 | 0.7647058823529411 | 0.6363636363636364 | 0.6086956521739131 | 0.675776397515528 | 0.6666666666666666 | 0.5626307720057719 |
+| Majority vote | 0.6896551724137931 | 0.6740196078431373 | 0.5833333333333334 | 0.7647058823529411 | 0.6363636363636364 | 0.6086956521739131 | 0.675776397515528 | 0.6936274509803921 | 0.5964705433455433 |
+
+Mean-probability confusion matrix:
+
+| Actual / Predicted | Non Demented | Very mild Dementia |
+|---|---:|---:|
+| Non Demented | 14 | 3 |
+| Very mild Dementia | 5 | 7 |
+
+E08 does not optimize thresholds and does not establish clinical diagnostic validity.
 
 ## Methodological Limitations
 

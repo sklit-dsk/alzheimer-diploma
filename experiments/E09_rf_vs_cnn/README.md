@@ -2,9 +2,9 @@
 
 ## Status
 
-Implemented, not yet confirmed.
+Completed.
 
-E09 must not be marked completed until `compare_rf_cnn.py` has run successfully and the generated outputs have been reviewed.
+`compare_rf_cnn.py` was executed successfully and the confirmed outputs are saved in `results/`.
 
 ## Objective
 
@@ -127,7 +127,7 @@ This is interpreted cautiously because the test set contains only 29 subjects. A
 
 ## Generated Outputs
 
-The script writes:
+The script wrote:
 
 - `results/e03_rf_reproduction_check.json`;
 - `results/rf_full_test_slice_predictions.csv`;
@@ -143,6 +143,64 @@ The script writes:
 - `results/rf_vs_cnn_roc_curves.png`;
 - `results/rf_vs_cnn_pr_curves.png`;
 - `results/e09_summary.json`.
+
+## Confirmed Results
+
+The E09 primary comparison used the E02 Age >= 60 cohort, the same frozen 29 E03 test subjects, and all 6,954 frozen test slices.
+
+Subject counts:
+
+| Class | Subjects |
+|---|---:|
+| Non Demented | 17 |
+| Very mild Dementia | 12 |
+| Total | 29 |
+
+The reconstructed Random Forest reproduced the saved E03 image-level result exactly:
+
+| Metric | Expected | Reproduced | Absolute difference |
+|---|---:|---:|---:|
+| Accuracy | 0.5787598004276551 | 0.5787598004276551 | 0.0 |
+| Balanced accuracy | 0.5787598004276551 | 0.5787598004276551 | 0.0 |
+| ROC-AUC | 0.6254816707300159 | 0.6254816707300159 | 0.0 |
+
+The E03 reproduction confusion matrix equality check passed.
+
+Primary subject-level comparison at threshold `0.5` using mean probability:
+
+| Model | Accuracy | Balanced accuracy | Sensitivity | Specificity | Precision | F1 positive | Macro F1 | ROC-AUC | PR-AUC |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Random Forest | 0.6206896551724138 | 0.5906862745098039 | 0.4166666666666667 | 0.7647058823529411 | 0.5555555555555556 | 0.47619047619047616 | 0.5894465894465895 | 0.6666666666666666 | 0.5676781776588278 |
+| ResNet18 CNN | 0.7241379310344828 | 0.7034313725490196 | 0.5833333333333334 | 0.8235294117647058 | 0.7 | 0.6363636363636364 | 0.7070707070707071 | 0.6911764705882353 | 0.6007440476190475 |
+
+Metric differences are defined as CNN metric minus RF metric:
+
+| Metric | Difference |
+|---|---:|
+| Accuracy | 0.10344827586206895 |
+| Balanced accuracy | 0.11274509803921562 |
+| Sensitivity | 0.16666666666666669 |
+| Specificity | 0.05882352941176472 |
+| Precision | 0.14444444444444438 |
+| F1 positive | 0.1601731601731602 |
+| Macro F1 | 0.11762411762411762 |
+| ROC-AUC | 0.02450980392156865 |
+| PR-AUC | 0.03306586996021976 |
+
+Paired correctness:
+
+| Outcome | Subjects |
+|---|---:|
+| Both correct | 15 |
+| Both wrong | 5 |
+| RF only correct | 3 |
+| CNN only correct | 6 |
+
+The exact McNemar supplementary test used 9 discordant pairs and gave p = 0.5078125.
+
+The CNN had higher observed metrics on this frozen 29-subject test set. However, McNemar exact p = 0.5078125 does not establish statistically proven superiority.
+
+These results must not be described using clinical-superiority or diagnostic-superiority language.
 
 ## Methodological Restrictions
 

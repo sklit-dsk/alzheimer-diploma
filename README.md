@@ -11,15 +11,21 @@ Faculty: Fakultet za informacione sisteme i tehnologije (FIST)
 
 ## Project status
 
-Current stage:
+Current status:
 
-**E01 — Clinical metadata and confounder analysis**
+**E01-E09 are completed.**
 
 The original Random Forest baseline has been preserved as:
 
 **E00 — Original Random Forest baseline**
 
-The project is currently focused on addressing the methodological requirements identified by the scientific supervisor before development of the main image-based model.
+The main ML experimental pipeline now includes clinical metadata analysis, age-control cohort construction, corrected Random Forest evaluation, threshold analysis, corrected Feature Importance, transfer-learning CNN evaluation, and RF-vs-CNN comparison.
+
+Current priority:
+
+**implementation of the information-system prototype and E11 final information-system evaluation.**
+
+E10 Explainability remains explicitly optional and should not delay the first complete diploma version.
 
 ---
 

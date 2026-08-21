@@ -222,11 +222,15 @@ E11 — Final information-system evaluation
 
 ## Current project stage
 
-Current active experiment:
+Current status:
 
-E01 — Clinical metadata and confounder analysis
+The main ML experimental pipeline E01-E09 is completed.
 
-The next technical objective is to obtain and connect clinical metadata with ImagesOASIS subject identifiers and analyze potential confounding factors before modifying the baseline model.
+The completed pipeline includes clinical metadata integration, confounder analysis, age-control cohort construction, corrected Random Forest evaluation, threshold analysis, corrected Feature Importance, transfer-learning CNN development, CNN subject-level evaluation, and RF-vs-CNN comparison.
+
+The next mandatory stage is implementation of the information-system prototype and E11 final information-system evaluation.
+
+E10 Explainability remains optional if time permits.
 
 ---
 

@@ -316,10 +316,14 @@ Limitations of the dataset, cohort, sample size and experimental methodology mus
 
 # 18. Current methodological priority
 
-The current active stage is:
+The current status is:
 
-**E01 — Clinical metadata and confounder analysis**
+**E01-E09 are completed.**
 
-No final cohort strategy has yet been selected.
+The main ML experimental pipeline has addressed clinical metadata integration, cohort construction, corrected Random Forest evaluation, subject-level aggregation, threshold analysis, corrected Feature Importance, transfer-learning CNN evaluation, and RF-vs-CNN comparison.
 
-The next methodological decision will be based on the actual clinical metadata analysis performed in E01.
+E10 Explainability remains optional.
+
+The next required stage is:
+
+**E11 — Final information-system evaluation**, after implementation of the initial information-system prototype.

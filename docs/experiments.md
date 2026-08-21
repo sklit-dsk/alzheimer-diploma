@@ -17,13 +17,13 @@ Do not overwrite historical experiment results when methodology changes.
 | E02 | Cohort construction / age control | Completed |
 | E03 | Clean Random Forest baseline | Completed |
 | E04 | Subject-level aggregation | Completed |
-| E05 | Threshold and sensitivity-specificity analysis | Current / in progress |
+| E05 | Threshold and sensitivity-specificity analysis | Completed |
 | E06 | Corrected Feature Importance | Completed |
 | E07 | Transfer-learning CNN | Completed |
 | E08 | CNN subject-level evaluation | Completed |
-| E09 | Random Forest vs CNN comparison | Current / in progress |
-| E10 | Explainability | Optional |
-| E11 | Final information-system evaluation | Planned |
+| E09 | Random Forest vs CNN comparison | Completed |
+| E10 | Explainability | Optional / not started |
+| E11 | Final information-system evaluation | Current / next mandatory stage |
 
 ---
 
@@ -572,7 +572,7 @@ Special attention should be paid to:
 
 The final interpretation should not depend only on the default threshold of 0.5.
 
-## Planned input
+## Input
 
 E05 uses the E04 subject-level prediction table:
 
@@ -582,7 +582,7 @@ The primary score for threshold analysis is `mean_probability`.
 
 Mean probability is used as the primary working aggregation from E04 because it provides a direct continuous subject-level score and can later be applied consistently to CNN outputs. This is a methodological working choice, not proof that mean aggregation is clinically optimal.
 
-## Planned methodology
+## Methodology
 
 E05 evaluates a predefined threshold grid from 0.10 to 0.90 in increments of 0.05.
 
@@ -629,7 +629,7 @@ For each feature group, record:
 
 Interpret the results as image characteristics used by the model, not as confirmed medical biomarkers.
 
-## Planned input
+## Input
 
 E06 uses the E03 feature-importance outputs:
 
@@ -638,7 +638,7 @@ E06 uses the E03 feature-importance outputs:
 
 E06 must not retrain the Random Forest or modify E03 predictions and metrics.
 
-## Planned methodology
+## Methodology
 
 E06 preserves the raw per-feature E03 importance values and creates corrected grouped summaries that account for the number of features in each category.
 
@@ -674,7 +674,7 @@ E07 implements transfer learning with ResNet18 and ImageNet pretrained weights.
 
 The model should use the same clean cohort and subject separation principles used for the corrected baseline.
 
-## Planned input
+## Input
 
 E07 uses:
 
@@ -685,7 +685,7 @@ E07 uses:
 
 The E03 test subjects are frozen and must not be used for training, validation, early stopping, model selection, hyperparameter tuning, augmentation decisions or threshold selection.
 
-## Planned methodology
+## Methodology
 
 Only the E03 train subjects are split internally into CNN train and validation subjects using a deterministic subject-level stratified split with seed `42`.
 
@@ -727,7 +727,7 @@ E07 does not calculate final CNN subject-level metrics. That evaluation belongs 
 
 ## Status
 
-Current / in progress.
+Completed.
 
 ## Objective
 
@@ -812,7 +812,7 @@ E08 does not perform threshold optimization. It does not prove clinical diagnost
 
 ## Status
 
-Current / in progress.
+Completed.
 
 ## Objective
 
@@ -827,7 +827,7 @@ The comparison should focus not only on overall accuracy but also on:
 - PR-AUC;
 - subject-level performance.
 
-## Planned methodology
+## Methodology
 
 E09 reconstructs the E03 Random Forest from saved E03 feature artifacts and first verifies that the reconstructed model reproduces the saved E03 image-level result on `binary_test_features.pkl`.
 
@@ -843,9 +843,9 @@ The primary RF-vs-CNN comparison uses:
 
 E09 must not retrain the CNN, tune RF hyperparameters, optimize thresholds, perform new feature extraction, or make clinical diagnostic claims.
 
-## Planned outputs
+## Generated outputs
 
-E09 should produce:
+E09 produced:
 
 - RF reconstruction / E03 reproduction check;
 - RF full-test slice predictions;
@@ -857,11 +857,72 @@ E09 should produce:
 - comparison figures;
 - `experiments/E09_rf_vs_cnn/results/e09_summary.json`.
 
+## Confirmed results
+
+The E09 primary comparison used the E02 Age >= 60 cohort and the same frozen 29 E03 test subjects:
+
+| Class | Subjects |
+|---|---:|
+| Non Demented | 17 |
+| Very mild Dementia | 12 |
+| Total | 29 |
+
+The full frozen test slice population contained 6,954 slices.
+
+The reconstructed Random Forest reproduced the saved E03 image-level result exactly:
+
+| Metric | Expected | Reproduced | Absolute difference |
+|---|---:|---:|---:|
+| Accuracy | 0.5787598004276551 | 0.5787598004276551 | 0.0 |
+| Balanced accuracy | 0.5787598004276551 | 0.5787598004276551 | 0.0 |
+| ROC-AUC | 0.6254816707300159 | 0.6254816707300159 | 0.0 |
+
+The E03 reproduction confusion matrix equality check passed.
+
+Primary subject-level comparison at threshold `0.5` using mean probability:
+
+| Model | Accuracy | Balanced accuracy | Sensitivity | Specificity | Precision | F1 positive | Macro F1 | ROC-AUC | PR-AUC |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Random Forest | 0.6206896551724138 | 0.5906862745098039 | 0.4166666666666667 | 0.7647058823529411 | 0.5555555555555556 | 0.47619047619047616 | 0.5894465894465895 | 0.6666666666666666 | 0.5676781776588278 |
+| ResNet18 CNN | 0.7241379310344828 | 0.7034313725490196 | 0.5833333333333334 | 0.8235294117647058 | 0.7 | 0.6363636363636364 | 0.7070707070707071 | 0.6911764705882353 | 0.6007440476190475 |
+
+Metric differences are defined as CNN metric minus RF metric:
+
+| Metric | Difference |
+|---|---:|
+| Accuracy | 0.10344827586206895 |
+| Balanced accuracy | 0.11274509803921562 |
+| Sensitivity | 0.16666666666666669 |
+| Specificity | 0.05882352941176472 |
+| Precision | 0.14444444444444438 |
+| F1 positive | 0.1601731601731602 |
+| Macro F1 | 0.11762411762411762 |
+| ROC-AUC | 0.02450980392156865 |
+| PR-AUC | 0.03306586996021976 |
+
+Paired correctness counts:
+
+| Outcome | Subjects |
+|---|---:|
+| Both correct | 15 |
+| Both wrong | 5 |
+| RF only correct | 3 |
+| CNN only correct | 6 |
+
+Exact McNemar supplementary test:
+
+| Item | Value |
+|---|---:|
+| Discordant total | 9 |
+| p-value | 0.5078125 |
+
 ## Interpretation rules
+
+The CNN had higher observed metrics on this frozen 29-subject test set. However, McNemar exact p = 0.5078125 does not establish statistically proven superiority.
 
 Metric differences must be interpreted as descriptive observations on the frozen 29-subject test set.
 
-E09 must not be marked completed until the script has run successfully and its generated results have been reviewed.
+E09 does not establish clinical diagnostic validity or clinical superiority.
 
 ---
 
@@ -869,7 +930,7 @@ E09 must not be marked completed until the script has run successfully and its g
 
 ## Status
 
-Optional.
+Optional / not started.
 
 ## Objective
 
@@ -885,7 +946,7 @@ Explainability results must be interpreted cautiously and must not automatically
 
 ## Status
 
-Planned.
+Current / next mandatory stage.
 
 ## Objective
 
