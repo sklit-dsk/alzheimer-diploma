@@ -1,0 +1,45 @@
+{
+  "expected_values": {
+    "accuracy": 0.5787598004276551,
+    "balanced_accuracy": 0.5787598004276551,
+    "roc_auc": 0.6254816707300159,
+    "confusion_matrix": [
+      [
+        1943,
+        863
+      ],
+      [
+        1501,
+        1305
+      ]
+    ]
+  },
+  "reproduced_values": {
+    "accuracy": 0.5787598004276551,
+    "balanced_accuracy": 0.5787598004276551,
+    "roc_auc": 0.6254816707300159,
+    "confusion_matrix": [
+      [
+        1943,
+        863
+      ],
+      [
+        1501,
+        1305
+      ]
+    ]
+  },
+  "absolute_differences": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "roc_auc": 0.0
+  },
+  "metric_pass": {
+    "accuracy": true,
+    "balanced_accuracy": true,
+    "roc_auc": true
+  },
+  "confusion_matrix_equality": true,
+  "tolerance": 1e-12,
+  "passed": true
+}

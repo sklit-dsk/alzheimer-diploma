@@ -1,0 +1,30 @@
+subject_id,true_class,true_label,number_of_test_images,mean_probability,predicted_label_at_0_5,predicted_class
+OAS1_0019,Non Demented,0,244,0.43420652919442543,0,Non Demented
+OAS1_0030,Non Demented,0,244,0.4176631274960212,0,Non Demented
+OAS1_0070,Non Demented,0,244,0.49609776448363246,0,Non Demented
+OAS1_0075,Non Demented,0,244,0.5090091399065622,1,Very mild Dementia
+OAS1_0078,Non Demented,0,244,0.40221312351943816,0,Non Demented
+OAS1_0106,Non Demented,0,244,0.45866478095136015,0,Non Demented
+OAS1_0139,Non Demented,0,244,0.11174983799235538,0,Non Demented
+OAS1_0146,Non Demented,0,244,0.3565049101023032,0,Non Demented
+OAS1_0157,Non Demented,0,244,0.32654283098356623,0,Non Demented
+OAS1_0169,Non Demented,0,244,0.36904783153095855,0,Non Demented
+OAS1_0186,Non Demented,0,244,0.7137461615750388,1,Very mild Dementia
+OAS1_0256,Non Demented,0,244,0.6033523848458477,1,Very mild Dementia
+OAS1_0299,Non Demented,0,244,0.243743454146272,0,Non Demented
+OAS1_0326,Non Demented,0,244,0.494006724551099,0,Non Demented
+OAS1_0342,Non Demented,0,244,0.2680800790572246,0,Non Demented
+OAS1_0363,Non Demented,0,244,0.37485047922804154,0,Non Demented
+OAS1_0365,Non Demented,0,244,0.591166545323563,1,Very mild Dementia
+OAS1_0016,Very mild Dementia,1,183,0.4311482681802292,0,Non Demented
+OAS1_0021,Very mild Dementia,1,244,0.47733555831058944,0,Non Demented
+OAS1_0022,Very mild Dementia,1,244,0.422333714731106,0,Non Demented
+OAS1_0094,Very mild Dementia,1,244,0.4231798247486215,0,Non Demented
+OAS1_0120,Very mild Dementia,1,244,0.7532257860607152,1,Very mild Dementia
+OAS1_0142,Very mild Dementia,1,244,0.5509293301741526,1,Very mild Dementia
+OAS1_0164,Very mild Dementia,1,244,0.5301876664587241,1,Very mild Dementia
+OAS1_0288,Very mild Dementia,1,244,0.5138736991199274,1,Very mild Dementia
+OAS1_0312,Very mild Dementia,1,244,0.33892745647378436,0,Non Demented
+OAS1_0339,Very mild Dementia,1,244,0.43654200245053576,0,Non Demented
+OAS1_0352,Very mild Dementia,1,183,0.5624785241206404,1,Very mild Dementia
+OAS1_0374,Very mild Dementia,1,244,0.4820051138478306,0,Non Demented

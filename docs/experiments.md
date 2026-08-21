@@ -20,8 +20,8 @@ Do not overwrite historical experiment results when methodology changes.
 | E05 | Threshold and sensitivity-specificity analysis | Current / in progress |
 | E06 | Corrected Feature Importance | Completed |
 | E07 | Transfer-learning CNN | Completed |
-| E08 | CNN subject-level evaluation | Current / in progress |
-| E09 | Random Forest vs CNN comparison | Planned |
+| E08 | CNN subject-level evaluation | Completed |
+| E09 | Random Forest vs CNN comparison | Current / in progress |
 | E10 | Explainability | Optional |
 | E11 | Final information-system evaluation | Planned |
 
@@ -664,7 +664,7 @@ Regional image-grid features may be described only as image regions whose handcr
 
 ## Status
 
-Current / in progress.
+Completed.
 
 ## Objective
 
@@ -733,13 +733,13 @@ Current / in progress.
 
 Evaluate CNN predictions at subject level using the same methodological principles and metrics used for the Random Forest model.
 
-## Planned input
+## Input
 
 E08 uses the E07 Attempt 2 frozen-test slice prediction table:
 
 - `experiments/E07_cnn/results/test_slice_predictions_attempt2.csv`
 
-## Planned methodology
+## Methodology
 
 E08 aggregates CNN slice-level predictions into exactly one row per subject using:
 
@@ -753,9 +753,9 @@ The default threshold remains `0.5`.
 
 E08 must not retrain the CNN, modify the checkpoint, choose a different checkpoint, optimize thresholds, or use test labels for training decisions.
 
-## Planned outputs
+## Generated outputs
 
-E08 should produce:
+E08 produced:
 
 - `experiments/E08_cnn_subject_level/results/subject_level_predictions.csv`;
 - subject-level metrics for each aggregation strategy;
@@ -763,13 +763,48 @@ E08 should produce:
 - `experiments/E08_cnn_subject_level/results/aggregation_comparison.csv`;
 - `experiments/E08_cnn_subject_level/results/e08_summary.json`.
 
+## Confirmed results
+
+The E08 frozen CNN test set contains:
+
+| Class | Subjects |
+|---|---:|
+| Non Demented | 17 |
+| Very mild Dementia | 12 |
+| Total | 29 |
+
+The test set contains 6,954 slice predictions.
+
+All E08 metrics are calculated from exactly one row per subject.
+
+Mean-probability aggregation at threshold `0.5`:
+
+| Metric | Value |
+|---|---:|
+| Accuracy | 0.7241379310 |
+| Balanced accuracy | 0.7034313725 |
+| Sensitivity | 0.5833333333 |
+| Specificity | 0.8235294118 |
+| Precision | 0.7 |
+| F1 positive | 0.6363636364 |
+| Macro F1 | 0.7070707071 |
+| ROC-AUC | 0.6911764706 |
+| PR-AUC | 0.6007440476 |
+
+Confusion matrix for mean-probability aggregation:
+
+| Actual / Predicted | Non Demented | Very mild Dementia |
+|---|---:|---:|
+| Non Demented | 14 | 3 |
+| Very mild Dementia | 5 | 7 |
+
 ## Interpretation rules
 
 All E08 metrics must be calculated from exactly one row per subject.
 
 The frozen test set contains only 29 subjects, so results must be interpreted cautiously.
 
-E08 must not be marked completed until the script has run successfully and the generated results have been reviewed.
+E08 does not perform threshold optimization. It does not prove clinical diagnostic validity.
 
 ---
 
@@ -777,7 +812,7 @@ E08 must not be marked completed until the script has run successfully and the g
 
 ## Status
 
-Planned.
+Current / in progress.
 
 ## Objective
 
@@ -791,6 +826,42 @@ The comparison should focus not only on overall accuracy but also on:
 - ROC-AUC;
 - PR-AUC;
 - subject-level performance.
+
+## Planned methodology
+
+E09 reconstructs the E03 Random Forest from saved E03 feature artifacts and first verifies that the reconstructed model reproduces the saved E03 image-level result on `binary_test_features.pkl`.
+
+Only after that check passes, E09 applies the reconstructed Random Forest to all 6,954 frozen E03 test slices. This creates a more symmetric comparison with E08, because historical E04 RF aggregation used 5,612 image-balanced test slices while E08 CNN aggregation used all frozen test slices.
+
+The primary RF-vs-CNN comparison uses:
+
+- the same 29 frozen E03 test subjects;
+- mean probability aggregation;
+- subject-level metrics;
+- default threshold `0.5`;
+- Very mild Dementia as the positive class.
+
+E09 must not retrain the CNN, tune RF hyperparameters, optimize thresholds, perform new feature extraction, or make clinical diagnostic claims.
+
+## Planned outputs
+
+E09 should produce:
+
+- RF reconstruction / E03 reproduction check;
+- RF full-test slice predictions;
+- RF full-test subject predictions;
+- paired RF and CNN subject predictions;
+- subject-level model comparison table;
+- paired correctness summary;
+- historical E04 RF vs symmetric E09 RF comparison;
+- comparison figures;
+- `experiments/E09_rf_vs_cnn/results/e09_summary.json`.
+
+## Interpretation rules
+
+Metric differences must be interpreted as descriptive observations on the frozen 29-subject test set.
+
+E09 must not be marked completed until the script has run successfully and its generated results have been reviewed.
 
 ---
 

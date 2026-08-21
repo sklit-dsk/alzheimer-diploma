@@ -1,0 +1,18 @@
+{
+  "both_correct": 15,
+  "both_wrong": 5,
+  "rf_only_correct": 3,
+  "cnn_only_correct": 6,
+  "discordant_counts": {
+    "rf_correct_cnn_wrong": 3,
+    "rf_wrong_cnn_correct": 6
+  },
+  "mcnemar_exact": {
+    "calculated": true,
+    "test": "exact McNemar via scipy.stats.binomtest on discordant paired correctness counts",
+    "p_value": 0.5078125,
+    "reason": null,
+    "discordant_total": 9
+  },
+  "interpretation_limitation": "This is a supplementary paired analysis on only 29 test subjects. A non-significant result does not prove equivalence, and a significant result would not establish clinical superiority."
+}
