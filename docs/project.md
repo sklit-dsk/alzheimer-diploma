@@ -96,13 +96,13 @@ Before developing the main image-based model, the following issues must be addre
 
 ---
 
-## System concept
+## Implemented information-system prototype
 
-The final project should contain both an experimental machine-learning pipeline and a simple information-system layer.
+The project contains both an experimental machine-learning pipeline and a simple information-system layer.
 
-The conceptual flow is:
+The implemented flow is:
 
-MRI data
+MRI JPG/JPEG slices
 → preprocessing
 → machine-learning model
 → slice-level prediction
@@ -110,9 +110,17 @@ MRI data
 → subject-level result
 → presentation inside the information system
 
-The information system should allow a user to provide or select MRI data and receive a model-generated research classification result.
+The implemented prototype is a local FastAPI application with a server-rendered HTML/Jinja2 interface.
 
-The output should be presented as a probabilistic or classification result and must not be presented as a medical diagnosis.
+It allows a user to upload multiple JPG/JPEG MRI slices belonging to one subject and receive a model-generated research classification result.
+
+The prototype uses the saved E07 ResNet18 Attempt 2 checkpoint, E07-compatible preprocessing, mean-probability subject aggregation and threshold `0.5`.
+
+Uploaded files are processed in memory and are not intentionally stored permanently.
+
+The prototype does not use a database.
+
+The output is presented as a research classification result and must not be presented as a medical diagnosis.
 
 ---
 
@@ -190,6 +198,8 @@ The following are not currently primary goals:
 
 These may be mentioned as possible future work but should not be presented as completed functionality.
 
+Major study limitations remain: the frozen subject-level test set contains 29 subjects, no external validation was performed, E05 threshold analysis is descriptive on the test set, and the project does not establish clinical validation.
+
 ---
 
 ## Experiment roadmap
@@ -214,7 +224,7 @@ E08 — CNN subject-level evaluation
 
 E09 — Random Forest vs CNN comparison
 
-E10 — Explainability, if time permits
+E10 — Explainability, optional / not performed
 
 E11 — Final information-system evaluation
 
@@ -228,9 +238,13 @@ The main ML experimental pipeline E01-E09 is completed.
 
 The completed pipeline includes clinical metadata integration, confounder analysis, age-control cohort construction, corrected Random Forest evaluation, threshold analysis, corrected Feature Importance, transfer-learning CNN development, CNN subject-level evaluation, and RF-vs-CNN comparison.
 
-The next mandatory stage is implementation of the information-system prototype and E11 final information-system evaluation.
+The information-system prototype has been implemented and E11 final information-system evaluation completed successfully.
 
-E10 Explainability remains optional if time permits.
+E10 Explainability remains optional and was not performed.
+
+The mandatory experimental roadmap is complete except E10, which remains optional.
+
+The next major phase is preparation of the first complete diploma draft based on confirmed results.
 
 ---
 
@@ -252,6 +266,7 @@ The minimum target for the first working version is:
 8. subject-level CNN evaluation;
 9. preliminary Random Forest vs CNN comparison;
 10. initial information-system prototype;
-11. complete thesis draft based only on confirmed results.
+11. E11 final information-system evaluation;
+12. complete thesis draft based only on confirmed results.
 
 Optional improvements must not delay the first complete version.

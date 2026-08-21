@@ -23,7 +23,9 @@ Do not overwrite historical experiment results when methodology changes.
 | E08 | CNN subject-level evaluation | Completed |
 | E09 | Random Forest vs CNN comparison | Completed |
 | E10 | Explainability | Optional / not performed |
-| E11 | Final information-system evaluation | Current / in progress |
+| E11 | Final information-system evaluation | Completed |
+
+The mandatory experimental roadmap is complete except E10, which remains optional and was not performed.
 
 ---
 
@@ -946,7 +948,7 @@ Explainability results must be interpreted cautiously and must not automatically
 
 ## Status
 
-Current / in progress.
+Completed.
 
 ## Objective
 
@@ -971,7 +973,7 @@ Evaluation areas:
 
 ## Generated outputs
 
-Planned E11 outputs:
+E11 produced:
 
 - `experiments/E11_information_system_evaluation/results/pytest_output.txt`;
 - `experiments/E11_information_system_evaluation/results/test_suite_summary.json`;
@@ -984,10 +986,74 @@ Planned E11 outputs:
 - `experiments/E11_information_system_evaluation/results/system_configuration.json`;
 - `experiments/E11_information_system_evaluation/results/e11_summary.json`.
 
+## Confirmed results
+
+The overall prototype evaluation status was:
+
+| Item | Value |
+|---|---:|
+| Overall prototype evaluation status | passed |
+| Automated pytest suite overall passed | true |
+| Pytest passed tests parsed from saved output | 11 |
+| Pytest total tests collected | not explicitly parsed from `pytest -q` output |
+
+E07 inference consistency:
+
+| Item | Value |
+|---|---:|
+| Checked slices | 16 |
+| Tolerance | 1e-10 |
+| Max absolute difference | 1.1102230246251565e-16 |
+| Mean absolute difference | 1.677802861921318e-17 |
+| Passed | true |
+
+End-to-end subject consistency:
+
+| Item | Value |
+|---|---:|
+| Subject ID | OAS1_0016 |
+| True class | Very mild Dementia |
+| Number of slices | 183 |
+| Saved E08 mean probability | 0.550241973942128 |
+| System mean model score | 0.550241973942128 |
+| Absolute difference | 0.0 |
+| Saved E08 predicted class | Very mild Dementia |
+| System predicted class | Very mild Dementia |
+| Threshold | 0.5 |
+| Probability consistency passed | true |
+| Classification consistency passed | true |
+| Slice-count consistency passed | true |
+
+Functional scenario checks:
+
+| Item | Value |
+|---|---:|
+| Total scenarios | 7 |
+| Passed scenarios | 7 |
+| Failed scenarios | 0 |
+| All passed | true |
+
+Result-presentation and privacy/storage checks:
+
+| Check | Result |
+|---|---:|
+| Result-presentation check | passed |
+| Privacy/storage scope check | passed |
+
+System configuration used by E11:
+
+| Item | Value |
+|---|---|
+| Model | ResNet18 CNN, E07 Attempt 2 |
+| Aggregation | mean probability |
+| Threshold | 0.5 |
+| Input size | 224 |
+| Accepted extensions | `.jpeg`, `.jpg` |
+
+E11 confirmed that the implemented local research prototype behaves consistently with the saved ML pipeline for the evaluated checks and handles the evaluated usage/error scenarios.
+
 ## Interpretation rules
 
 E11 may conclude only that the implemented research prototype behaves consistently with the saved ML pipeline and handles the evaluated usage and error scenarios.
 
-E11 must not be interpreted as evidence of clinical validity, diagnostic safety, hospital readiness, regulatory compliance or real-world clinical effectiveness.
-
-E11 must not be marked completed until the evaluation script has been executed successfully and the saved outputs have been reviewed.
+E11 evaluates implementation behavior only. It does not establish clinical validity, diagnostic safety, hospital readiness, regulatory compliance or real-world clinical effectiveness.

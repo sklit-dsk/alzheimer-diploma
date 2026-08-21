@@ -49,9 +49,9 @@ The dataset contains multiple MRI slices for individual subjects.
 
 Therefore the image itself is not treated as an independent subject for the main final evaluation.
 
-Clinical metadata will be integrated from an appropriate OASIS source where subject identifiers can be reliably connected.
+Clinical metadata was integrated from OASIS-1 where subject identifiers could be reliably connected.
 
-The exact clinical metadata source and matching procedure must be documented during E01.
+The clinical metadata source and matching procedure were documented in E01.
 
 ---
 
@@ -88,31 +88,31 @@ This reduces the risk of subject leakage caused by highly related images from th
 
 The scientific supervisor identified age as an important potential confounding factor.
 
-The clinical analysis should include, where available:
+The clinical analysis included, where available:
 
 - Age;
 - Sex;
 - CDR;
 - MMSE.
 
-Before selecting the final cohort, the distributions of these variables must be examined.
+Before selecting the final cohort, the distributions of these variables were examined.
 
 In particular, the age distributions of:
 
 - Non Demented;
 - Very mild Dementia
 
-must be compared.
+were compared.
 
-No final age-control strategy is selected before E01 is completed.
+E01 identified a severe original age imbalance and E02 selected the Age >= 60 cohort as the primary downstream cohort strategy.
 
-Candidate strategies include:
+Candidate strategies considered included:
 
 1. restricting the analysis to an older population such as subjects aged 60+;
 2. constructing approximately age-matched diagnostic groups;
 3. another strategy justified by the observed data and scientific literature.
 
-The selected strategy must be documented in E02.
+Approximate age matching remains optional as a sensitivity or additional analysis, but it was not selected as the primary strategy because it would reduce the available sample further.
 
 ---
 
@@ -122,7 +122,7 @@ The traditional machine-learning baseline uses handcrafted image features and a 
 
 E00 represents the original baseline.
 
-After clinical and cohort analysis, a corrected baseline will be produced as E03.
+After clinical and cohort analysis, the corrected Random Forest baseline was produced as E03 on the E02 Age >= 60 cohort.
 
 E00 must remain unchanged so that the effect of methodological changes can be analyzed.
 
@@ -136,15 +136,15 @@ Models may generate predictions for individual slices.
 
 These predictions should then be aggregated into one prediction per subject.
 
-Candidate aggregation strategies include:
+Evaluated aggregation strategies include:
 
 - mean predicted probability;
 - median predicted probability;
 - majority voting.
 
-The strategies may be compared experimentally.
+The strategies were compared experimentally.
 
-The selected primary aggregation method must be documented.
+Mean probability is used as the primary working subject-level probability aggregation for downstream comparison and for the information-system prototype. This is a methodological working choice, not proof that mean aggregation is clinically optimal.
 
 ---
 
@@ -184,15 +184,15 @@ The relationship between:
 - sensitivity;
 - specificity;
 
-should be analyzed across multiple classification thresholds.
+was analyzed across multiple classification thresholds in E05.
 
 Threshold selection must be reported transparently.
 
-If a threshold other than 0.5 is selected for a primary result, the reason must be documented.
+The final RF-vs-CNN descriptive comparison and the information-system prototype use threshold `0.5`.
 
-Threshold selection must not be based on the final test set in a way that introduces optimistic bias.
+E05 threshold analysis remains descriptive on the test set and is not validated threshold optimization.
 
-The exact threshold-selection procedure will be defined before final model evaluation.
+No alternative threshold was selected as final or clinically validated.
 
 ---
 
@@ -218,13 +218,13 @@ It must not automatically be interpreted as identification of medical biomarkers
 
 # 13. Main image-based model
 
-After the methodological corrections to the baseline are completed, an image-based deep-learning model will be developed.
+After the methodological corrections to the baseline were completed, an image-based deep-learning model was developed.
 
-The current intended approach is transfer learning using a CNN.
+The selected approach is transfer learning using a CNN.
 
-The exact architecture has not yet been selected.
+E07 selected ResNet18 transfer learning with ImageNet pretrained weights and a two-class final layer.
 
-Model selection should consider:
+Model selection considered:
 
 - suitability for the available dataset;
 - computational requirements;
@@ -232,22 +232,22 @@ Model selection should consider:
 - ability to perform subject-level evaluation;
 - comparability with the Random Forest baseline.
 
-The final CNN must follow the same subject-separation principles used by the corrected baseline.
+The final CNN follows the same subject-separation principles used by the corrected baseline.
 
 ---
 
 # 14. Model comparison
 
-The final comparison should include:
+The final comparison includes:
 
 - corrected Random Forest baseline;
-- selected CNN model.
+- selected CNN model, ResNet18 CNN E07 Attempt 2.
 
-Comparison should be performed using compatible cohorts and evaluation principles.
+Comparison was performed using compatible cohorts and evaluation principles.
 
 The comparison must not focus only on accuracy.
 
-Special attention should be paid to:
+Special attention was paid to:
 
 - sensitivity;
 - specificity;
@@ -280,9 +280,9 @@ Historical results must not be silently replaced when methodology changes.
 
 # 16. Information-system prototype
 
-The final practical component should expose the selected ML pipeline through a simple research information system.
+The final practical component exposes the selected ML pipeline through a simple research information system.
 
-Conceptual pipeline:
+Implemented pipeline:
 
 MRI input
 → preprocessing
@@ -291,7 +291,11 @@ MRI input
 → subject-level aggregation
 → result presentation
 
-The exact application architecture will be selected after the main ML pipeline becomes sufficiently stable.
+The implemented architecture is a local FastAPI application with server-rendered HTML/Jinja2 pages.
+
+It accepts multiple JPG/JPEG MRI slices for one subject, processes uploads in memory, applies E07-compatible preprocessing, uses the saved E07 ResNet18 Attempt 2 checkpoint, aggregates slice predictions by mean probability, and applies threshold `0.5`.
+
+The prototype does not intentionally store uploaded images permanently and does not use a database.
 
 The prototype must not present model output as a confirmed medical diagnosis.
 
@@ -312,18 +316,24 @@ The project does not establish:
 
 Limitations of the dataset, cohort, sample size and experimental methodology must be reported in the final thesis.
 
+Major study limitations include the frozen subject-level test set of 29 subjects, absence of external validation, descriptive E05 threshold analysis on the test set and absence of clinical validation.
+
 ---
 
 # 18. Current methodological priority
 
 The current status is:
 
-**E01-E09 are completed.**
+**E01-E09 and E11 are completed.**
 
 The main ML experimental pipeline has addressed clinical metadata integration, cohort construction, corrected Random Forest evaluation, subject-level aggregation, threshold analysis, corrected Feature Importance, transfer-learning CNN evaluation, and RF-vs-CNN comparison.
 
-E10 Explainability remains optional.
+The information-system prototype has been implemented and E11 final information-system evaluation completed successfully.
 
-The next required stage is:
+E10 Explainability remains optional and was not performed.
 
-**E11 — Final information-system evaluation**, after implementation of the initial information-system prototype.
+The mandatory experimental roadmap is complete except E10, which remains optional.
+
+The next major stage is:
+
+**preparation of the first complete diploma draft** based on confirmed results.

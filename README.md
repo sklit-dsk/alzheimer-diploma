@@ -13,7 +13,7 @@ Faculty: Fakultet za informacione sisteme i tehnologije (FIST)
 
 Current status:
 
-**E01-E09 are completed.**
+**E01-E09 and E11 are completed.**
 
 The original Random Forest baseline has been preserved as:
 
@@ -21,11 +21,15 @@ The original Random Forest baseline has been preserved as:
 
 The main ML experimental pipeline now includes clinical metadata analysis, age-control cohort construction, corrected Random Forest evaluation, threshold analysis, corrected Feature Importance, transfer-learning CNN evaluation, and RF-vs-CNN comparison.
 
+The local information-system prototype has been implemented and E11 final information-system evaluation completed successfully.
+
 Current priority:
 
-**implementation of the information-system prototype and E11 final information-system evaluation.**
+**preparation of the first complete diploma draft based on confirmed results.**
 
-E10 Explainability remains explicitly optional and should not delay the first complete diploma version.
+E10 Explainability remains explicitly optional and was not performed.
+
+The mandatory experimental roadmap is complete except E10, which remains optional.
 
 ---
 
@@ -81,7 +85,7 @@ Large source datasets are stored locally and are not committed to Git.
 | E07 | Transfer-learning CNN |
 | E08 | CNN subject-level evaluation |
 | E09 | Random Forest vs CNN comparison |
-| E10 | Explainability — optional |
+| E10 | Explainability — optional / not performed |
 | E11 | Final information-system evaluation |
 
 Detailed experiment status is maintained in:
@@ -128,7 +132,7 @@ alzheimer-diploma/
 
 ## Information-system prototype
 
-The repository now contains the minimal local FastAPI layer for the research information-system prototype.
+The repository contains the minimal local FastAPI layer for the research information-system prototype. E11 evaluated this prototype successfully.
 
 Run locally with:
 
@@ -137,6 +141,10 @@ python -m uvicorn information_system.main:app --app-dir src --reload
 ```
 
 The prototype allows uploading multiple JPG/JPEG MRI slices belonging to one subject. Uploaded files are processed in memory, passed through the saved E07 ResNet18 Attempt 2 checkpoint, aggregated with mean probability at threshold `0.5`, and shown as one subject-level research classification result.
+
+E11 confirmed that the prototype behavior is consistent with the saved ML pipeline for the evaluated checks. This does not establish clinical validity, diagnostic safety, hospital readiness, regulatory compliance or real-world clinical effectiveness.
+
+Major limitations remain: the frozen subject-level test set contains 29 subjects, no external validation was performed, E05 threshold analysis is descriptive on the test set, and the project does not establish clinical validation.
 
 Prototype scope and privacy limits:
 
