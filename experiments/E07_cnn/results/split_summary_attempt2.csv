@@ -1,0 +1,10 @@
+split,class,subjects,images
+train,Non Demented,54,13176
+train,Very mild Dementia,37,8723
+train,Total,91,21899
+validation,Non Demented,14,3355
+validation,Very mild Dementia,9,2196
+validation,Total,23,5551
+test,Non Demented,17,4148
+test,Very mild Dementia,12,2806
+test,Total,29,6954

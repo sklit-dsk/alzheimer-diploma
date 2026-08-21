@@ -1,0 +1,92 @@
+split,subject_id,class
+train,OAS1_0001,Non Demented
+train,OAS1_0010,Non Demented
+train,OAS1_0013,Non Demented
+train,OAS1_0032,Non Demented
+train,OAS1_0033,Non Demented
+train,OAS1_0062,Non Demented
+train,OAS1_0064,Non Demented
+train,OAS1_0068,Non Demented
+train,OAS1_0083,Non Demented
+train,OAS1_0085,Non Demented
+train,OAS1_0109,Non Demented
+train,OAS1_0110,Non Demented
+train,OAS1_0112,Non Demented
+train,OAS1_0130,Non Demented
+train,OAS1_0133,Non Demented
+train,OAS1_0135,Non Demented
+train,OAS1_0165,Non Demented
+train,OAS1_0170,Non Demented
+train,OAS1_0176,Non Demented
+train,OAS1_0180,Non Demented
+train,OAS1_0197,Non Demented
+train,OAS1_0199,Non Demented
+train,OAS1_0200,Non Demented
+train,OAS1_0206,Non Demented
+train,OAS1_0212,Non Demented
+train,OAS1_0220,Non Demented
+train,OAS1_0221,Non Demented
+train,OAS1_0228,Non Demented
+train,OAS1_0234,Non Demented
+train,OAS1_0237,Non Demented
+train,OAS1_0241,Non Demented
+train,OAS1_0244,Non Demented
+train,OAS1_0254,Non Demented
+train,OAS1_0255,Non Demented
+train,OAS1_0259,Non Demented
+train,OAS1_0270,Non Demented
+train,OAS1_0271,Non Demented
+train,OAS1_0279,Non Demented
+train,OAS1_0280,Non Demented
+train,OAS1_0293,Non Demented
+train,OAS1_0301,Non Demented
+train,OAS1_0303,Non Demented
+train,OAS1_0317,Non Demented
+train,OAS1_0322,Non Demented
+train,OAS1_0330,Non Demented
+train,OAS1_0332,Non Demented
+train,OAS1_0338,Non Demented
+train,OAS1_0341,Non Demented
+train,OAS1_0343,Non Demented
+train,OAS1_0354,Non Demented
+train,OAS1_0355,Non Demented
+train,OAS1_0358,Non Demented
+train,OAS1_0369,Non Demented
+train,OAS1_0371,Non Demented
+train,OAS1_0015,Very mild Dementia
+train,OAS1_0023,Very mild Dementia
+train,OAS1_0039,Very mild Dementia
+train,OAS1_0041,Very mild Dementia
+train,OAS1_0042,Very mild Dementia
+train,OAS1_0046,Very mild Dementia
+train,OAS1_0060,Very mild Dementia
+train,OAS1_0066,Very mild Dementia
+train,OAS1_0082,Very mild Dementia
+train,OAS1_0084,Very mild Dementia
+train,OAS1_0098,Very mild Dementia
+train,OAS1_0115,Very mild Dementia
+train,OAS1_0123,Very mild Dementia
+train,OAS1_0124,Very mild Dementia
+train,OAS1_0143,Very mild Dementia
+train,OAS1_0158,Very mild Dementia
+train,OAS1_0179,Very mild Dementia
+train,OAS1_0205,Very mild Dementia
+train,OAS1_0210,Very mild Dementia
+train,OAS1_0217,Very mild Dementia
+train,OAS1_0226,Very mild Dementia
+train,OAS1_0238,Very mild Dementia
+train,OAS1_0240,Very mild Dementia
+train,OAS1_0243,Very mild Dementia
+train,OAS1_0247,Very mild Dementia
+train,OAS1_0263,Very mild Dementia
+train,OAS1_0267,Very mild Dementia
+train,OAS1_0273,Very mild Dementia
+train,OAS1_0287,Very mild Dementia
+train,OAS1_0298,Very mild Dementia
+train,OAS1_0300,Very mild Dementia
+train,OAS1_0304,Very mild Dementia
+train,OAS1_0307,Very mild Dementia
+train,OAS1_0315,Very mild Dementia
+train,OAS1_0329,Very mild Dementia
+train,OAS1_0335,Very mild Dementia
+train,OAS1_0362,Very mild Dementia

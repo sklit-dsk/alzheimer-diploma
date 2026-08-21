@@ -1,0 +1,4 @@
+epoch,phase,source,train_loss,validation_loss,validation_subject_roc_auc,validation_subject_pr_auc,validation_subject_balanced_accuracy,attempt_status,note
+1,immediate_full_finetune,confirmed_terminal_values,0.1472,2.7387,0.5952,0.4698,0.4484,incomplete_attempt,Frozen test inference was not performed.
+2,immediate_full_finetune,confirmed_terminal_values,0.0390,2.8995,0.4524,0.4588,0.4008,incomplete_attempt,Frozen test inference was not performed.
+3,immediate_full_finetune,confirmed_terminal_values,0.0268,3.0080,0.4683,0.4210,0.5079,incomplete_attempt,Frozen test inference was not performed.

@@ -1,0 +1,24 @@
+subject_id,true_class,true_label,number_of_validation_images,mean_probability,predicted_label_at_0_5,predicted_class_at_0_5
+OAS1_0065,Non Demented,0,244,0.8382267538213828,1,Very mild Dementia
+OAS1_0072,Non Demented,0,244,0.12193718680929684,0,Non Demented
+OAS1_0113,Non Demented,0,244,0.014394795766517521,0,Non Demented
+OAS1_0114,Non Demented,0,244,0.14827023378685777,0,Non Demented
+OAS1_0138,Non Demented,0,244,0.7956227226326906,1,Very mild Dementia
+OAS1_0195,Non Demented,0,244,0.04553964236622157,0,Non Demented
+OAS1_0201,Non Demented,0,244,0.1705075334708249,0,Non Demented
+OAS1_0203,Non Demented,0,244,0.027964949147896056,0,Non Demented
+OAS1_0216,Non Demented,0,244,0.001506242195471284,0,Non Demented
+OAS1_0260,Non Demented,0,244,0.7471367169193519,1,Very mild Dementia
+OAS1_0284,Non Demented,0,244,0.40263657473620756,0,Non Demented
+OAS1_0292,Non Demented,0,244,0.03426216725243586,0,Non Demented
+OAS1_0337,Non Demented,0,183,0.06310549005072852,0,Non Demented
+OAS1_0356,Non Demented,0,244,0.03678300601312203,0,Non Demented
+OAS1_0003,Very mild Dementia,1,244,0.2996144680920508,0,Non Demented
+OAS1_0155,Very mild Dementia,1,244,0.5618169901353078,1,Very mild Dementia
+OAS1_0161,Very mild Dementia,1,244,0.17744454983063637,0,Non Demented
+OAS1_0166,Very mild Dementia,1,244,0.5049733390071456,1,Very mild Dementia
+OAS1_0233,Very mild Dementia,1,244,0.28301524441097875,0,Non Demented
+OAS1_0272,Very mild Dementia,1,244,0.03087383969338228,0,Non Demented
+OAS1_0286,Very mild Dementia,1,244,0.2216273557330299,0,Non Demented
+OAS1_0290,Very mild Dementia,1,244,0.7816658570854849,1,Very mild Dementia
+OAS1_0380,Very mild Dementia,1,244,0.17089849455623302,0,Non Demented

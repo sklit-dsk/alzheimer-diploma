@@ -1,0 +1,180 @@
+{
+  "experiment_id": "E07",
+  "attempt_id": "attempt2",
+  "attempt_strategy": "staged transfer learning",
+  "model_architecture": "ResNet18",
+  "pretrained_weights": "ResNet18_Weights.IMAGENET1K_V1",
+  "cohort": "E02 Age >= 60 cohort with frozen E03 test split",
+  "train_validation_test_subject_counts": {
+    "train": 91,
+    "validation": 23,
+    "test": 29
+  },
+  "image_counts": {
+    "train": 21899,
+    "validation": 5551,
+    "test": 6954
+  },
+  "split_summary": [
+    {
+      "split": "train",
+      "class": "Non Demented",
+      "subjects": 54,
+      "images": 13176
+    },
+    {
+      "split": "train",
+      "class": "Very mild Dementia",
+      "subjects": 37,
+      "images": 8723
+    },
+    {
+      "split": "train",
+      "class": "Total",
+      "subjects": 91,
+      "images": 21899
+    },
+    {
+      "split": "validation",
+      "class": "Non Demented",
+      "subjects": 14,
+      "images": 3355
+    },
+    {
+      "split": "validation",
+      "class": "Very mild Dementia",
+      "subjects": 9,
+      "images": 2196
+    },
+    {
+      "split": "validation",
+      "class": "Total",
+      "subjects": 23,
+      "images": 5551
+    },
+    {
+      "split": "test",
+      "class": "Non Demented",
+      "subjects": 17,
+      "images": 4148
+    },
+    {
+      "split": "test",
+      "class": "Very mild Dementia",
+      "subjects": 12,
+      "images": 2806
+    },
+    {
+      "split": "test",
+      "class": "Total",
+      "subjects": 29,
+      "images": 6954
+    }
+  ],
+  "best_global_epoch": 10,
+  "best_phase": "phase_2_layer4_fc",
+  "best_epoch_in_phase": 6,
+  "checkpoint_selection_metric": "validation_subject_roc_auc",
+  "checkpoint_tie_breaker": "validation_loss",
+  "best_validation_metrics": {
+    "validation_loss": 2.1393374646374563,
+    "validation_subject_roc_auc": 0.6904761904761905,
+    "validation_subject_pr_auc": 0.5157687991021325,
+    "validation_subject_accuracy": 0.6086956521739131,
+    "validation_subject_balanced_accuracy": 0.5595238095238095,
+    "validation_subject_sensitivity": 0.3333333333333333,
+    "validation_subject_specificity": 0.7857142857142857
+  },
+  "class_weights": {
+    "Non Demented": 0.8425925970077515,
+    "Very mild Dementia": 1.2297297716140747
+  },
+  "training_configuration": {
+    "experiment_id": "E07",
+    "attempt_id": "attempt2",
+    "attempt_strategy": "staged transfer learning",
+    "model_architecture": "torchvision.models.resnet18",
+    "pretrained_weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "seed": 42,
+    "input_size": 224,
+    "batch_size": 16,
+    "phase_1_epochs": 4,
+    "phase_1_trainable_layers": "fc only",
+    "phase_1_optimizer": "AdamW",
+    "phase_1_learning_rate": 0.001,
+    "phase_1_weight_decay": 0.0001,
+    "phase_2_max_epochs": 8,
+    "phase_2_trainable_layers": "layer4 and fc",
+    "phase_2_optimizer": "AdamW",
+    "phase_2_learning_rate": 1e-05,
+    "phase_2_weight_decay": 0.0001,
+    "phase_2_early_stopping_patience": 3,
+    "weight_decay": 0.0001,
+    "loss": "CrossEntropyLoss with class weights from CNN train subject counts",
+    "validation_fraction": 0.2,
+    "checkpoint_selection_metric": "validation_subject_roc_auc",
+    "checkpoint_tie_breaker": "validation_loss",
+    "default_threshold": 0.5,
+    "frozen_test_policy": "E03 test subjects are not used for training, validation, early stopping, model selection, hyperparameter tuning, augmentation decisions, or threshold selection.",
+    "reproducibility_note": "Seeds and deterministic flags are configured where practical, with CUBLAS_WORKSPACE_CONFIG=:4096:8 set before torch import. Absolute bit-for-bit reproducibility is not promised across all CUDA environments.",
+    "image_root": "data/raw/imagesoasis/Data",
+    "train_augmentation": "Resize 224x224; random affine rotation +/-5 degrees, translation 2%, scale 0.98-1.02; grayscale repeated to 3 channels; ImageNet normalization.",
+    "validation_test_transform": "Resize 224x224; grayscale repeated to 3 channels; ImageNet normalization.",
+    "class_label_mapping": {
+      "Non Demented": 0,
+      "Very mild Dementia": 1
+    },
+    "class_weights_by_train_subject_counts": {
+      "Non Demented": 0.8425925970077515,
+      "Very mild Dementia": 1.2297297716140747
+    },
+    "train_subject_counts_for_class_weights": {
+      "Non Demented": 54,
+      "Very mild Dementia": 37
+    },
+    "hardware": {
+      "torch_version": "2.7.1+cu118",
+      "torchvision_version": "0.22.1+cu118",
+      "cuda_available": true,
+      "cuda_version": "11.8",
+      "device": "cuda",
+      "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "mixed_precision_enabled": true
+    }
+  },
+  "hardware": {
+    "torch_version": "2.7.1+cu118",
+    "torchvision_version": "0.22.1+cu118",
+    "cuda_available": true,
+    "cuda_version": "11.8",
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "mixed_precision_enabled": true
+  },
+  "global_epochs_completed": 12,
+  "phase_1_epochs_configured": 4,
+  "phase_2_max_epochs_configured": 8,
+  "phase_2_early_stopping_patience": 3,
+  "test_inference_status": {
+    "completed": true,
+    "test_slice_predictions": 6954,
+    "test_subjects": 29,
+    "note": "E07 saves slice-level CNN test predictions only."
+  },
+  "validation_subject_predictions_saved": 23,
+  "final_cnn_subject_level_test_evaluation": "Belongs to E08.",
+  "interpretation_rules": [
+    "Do not claim CNN superiority over RF in E07.",
+    "Do not treat E07 test slice predictions as final subject-level CNN performance.",
+    "The frozen E03 test subjects are not used for training decisions.",
+    "This is a research classifier, not a clinically validated diagnostic system."
+  ],
+  "best_checkpoint_path": "experiments\\E07_cnn\\artifacts\\best_resnet18_attempt2.pt",
+  "checkpoint_global_epoch_in_file": 10,
+  "checkpoint_phase_in_file": "phase_2_layer4_fc",
+  "checkpoint_epoch_in_phase_in_file": 6,
+  "validation_loss_from_best_checkpoint_inference": 2.1393374646374563,
+  "postprocess_only": true,
+  "training_rerun": false,
+  "postprocess_recovery_note": "Attempt 2 training had already completed. This mode loaded the existing local checkpoint with weights_only=False because it contains optimizer/config metadata, verified it against training_history_attempt2.csv, then generated validation and frozen-test slice predictions without retraining."
+}

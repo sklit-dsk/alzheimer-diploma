@@ -1,0 +1,53 @@
+{
+  "experiment_id": "E07",
+  "attempt_id": "attempt2",
+  "attempt_strategy": "staged transfer learning",
+  "model_architecture": "torchvision.models.resnet18",
+  "pretrained_weights": "ResNet18_Weights.IMAGENET1K_V1",
+  "seed": 42,
+  "input_size": 224,
+  "batch_size": 16,
+  "phase_1_epochs": 4,
+  "phase_1_trainable_layers": "fc only",
+  "phase_1_optimizer": "AdamW",
+  "phase_1_learning_rate": 0.001,
+  "phase_1_weight_decay": 0.0001,
+  "phase_2_max_epochs": 8,
+  "phase_2_trainable_layers": "layer4 and fc",
+  "phase_2_optimizer": "AdamW",
+  "phase_2_learning_rate": 1e-05,
+  "phase_2_weight_decay": 0.0001,
+  "phase_2_early_stopping_patience": 3,
+  "weight_decay": 0.0001,
+  "loss": "CrossEntropyLoss with class weights from CNN train subject counts",
+  "validation_fraction": 0.2,
+  "checkpoint_selection_metric": "validation_subject_roc_auc",
+  "checkpoint_tie_breaker": "validation_loss",
+  "default_threshold": 0.5,
+  "frozen_test_policy": "E03 test subjects are not used for training, validation, early stopping, model selection, hyperparameter tuning, augmentation decisions, or threshold selection.",
+  "reproducibility_note": "Seeds and deterministic flags are configured where practical, with CUBLAS_WORKSPACE_CONFIG=:4096:8 set before torch import. Absolute bit-for-bit reproducibility is not promised across all CUDA environments.",
+  "image_root": "data/raw/imagesoasis/Data",
+  "train_augmentation": "Resize 224x224; random affine rotation +/-5 degrees, translation 2%, scale 0.98-1.02; grayscale repeated to 3 channels; ImageNet normalization.",
+  "validation_test_transform": "Resize 224x224; grayscale repeated to 3 channels; ImageNet normalization.",
+  "class_label_mapping": {
+    "Non Demented": 0,
+    "Very mild Dementia": 1
+  },
+  "class_weights_by_train_subject_counts": {
+    "Non Demented": 0.8425925970077515,
+    "Very mild Dementia": 1.2297297716140747
+  },
+  "train_subject_counts_for_class_weights": {
+    "Non Demented": 54,
+    "Very mild Dementia": 37
+  },
+  "hardware": {
+    "torch_version": "2.7.1+cu118",
+    "torchvision_version": "0.22.1+cu118",
+    "cuda_available": true,
+    "cuda_version": "11.8",
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "mixed_precision_enabled": true
+  }
+}

@@ -18,8 +18,8 @@ Do not overwrite historical experiment results when methodology changes.
 | E03 | Clean Random Forest baseline | Completed |
 | E04 | Subject-level aggregation | Completed |
 | E05 | Threshold and sensitivity-specificity analysis | Current / in progress |
-| E06 | Corrected Feature Importance | Current / in progress |
-| E07 | Transfer-learning CNN | Planned |
+| E06 | Corrected Feature Importance | Completed |
+| E07 | Transfer-learning CNN | Current / in progress |
 | E08 | CNN subject-level evaluation | Planned |
 | E09 | Random Forest vs CNN comparison | Planned |
 | E10 | Explainability | Optional |
@@ -615,7 +615,7 @@ Validated threshold selection would require an independent validation cohort or 
 
 ## Status
 
-Current / in progress.
+Completed.
 
 ## Objective
 
@@ -664,15 +664,50 @@ Regional image-grid features may be described only as image regions whose handcr
 
 ## Status
 
-Planned.
+Current / in progress.
 
 ## Objective
 
 Develop the main image-based model after E01-E06 have addressed the methodological issues identified by the supervisor.
 
-The exact CNN architecture has not yet been selected.
+E07 implements transfer learning with ResNet18 and ImageNet pretrained weights.
 
 The model should use the same clean cohort and subject separation principles used for the corrected baseline.
+
+## Planned input
+
+E07 uses:
+
+- `experiments/E03_clean_rf/results/train_subjects.csv`;
+- `experiments/E03_clean_rf/results/test_subjects.csv`;
+- `experiments/E03_clean_rf/results/selected_image_metadata.csv`;
+- `data/raw/imagesoasis/Data`.
+
+The E03 test subjects are frozen and must not be used for training, validation, early stopping, model selection, hyperparameter tuning, augmentation decisions or threshold selection.
+
+## Planned methodology
+
+Only the E03 train subjects are split internally into CNN train and validation subjects using a deterministic subject-level stratified split with seed `42`.
+
+The E03 test subjects remain the frozen test set for one-time inference after checkpoint selection.
+
+The model is `torchvision.models.resnet18` with ImageNet pretrained weights and a two-class final layer.
+
+MRI JPG images are loaded as grayscale, converted to three channels for ResNet18, resized to `224 x 224`, and normalized with ImageNet normalization.
+
+Training augmentation is conservative: small rotation, translation and scale variation only. Flipping, aggressive cropping and large rotations are not used.
+
+Checkpoint selection uses validation subject-level ROC-AUC based on mean-probability aggregation. Validation loss is used only as a deterministic tie-breaker.
+
+E07 does not optimize a classification threshold. The default threshold remains `0.5` for descriptive validation metrics.
+
+## Interpretation rules
+
+E07 saves CNN test slice predictions only after the best validation checkpoint is selected.
+
+Final CNN subject-level test evaluation belongs to E08.
+
+E07 must not claim CNN superiority over the Random Forest baseline and must not present the model as clinically validated.
 
 ---
 
