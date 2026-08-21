@@ -10,3 +10,9 @@ jupyter
 ipykernel
 torch
 torchvision
+fastapi
+uvicorn
+python-multipart
+jinja2
+httpx
+pytest

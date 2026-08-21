@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload Error</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="panel">
+      <p class="eyebrow">Validation error</p>
+      <h1>Unable to analyze the uploaded files</h1>
+      <p class="error-message">{{ message }}</p>
+
+      <div class="warning" role="note">
+        {{ research_warning }}
+      </div>
+
+      <a class="button-link" href="/">Back to upload form</a>
+    </section>
+  </main>
+</body>
+</html>

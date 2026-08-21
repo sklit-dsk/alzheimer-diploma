@@ -1,0 +1,114 @@
+{
+  "experiment_id": "E11",
+  "objective": "Evaluate the local research information-system prototype for pipeline consistency, validation behavior, presentation wording, privacy/storage scope and reproducible local execution.",
+  "automated_test_suite_result": {
+    "total_tests_collected": null,
+    "passed": 11,
+    "failed": null,
+    "errors": null,
+    "return_code": 0,
+    "execution_time_seconds": 16.394298400031403,
+    "overall_passed": true,
+    "parsing_note": "Detailed counts were parsed from pytest output where available; raw stdout/stderr are saved for verification."
+  },
+  "e07_inference_consistency_result": {
+    "number_of_slices_checked": 16,
+    "tolerance": 1e-10,
+    "max_absolute_difference": 1.1102230246251565e-16,
+    "mean_absolute_difference": 1.677802861921318e-17,
+    "passed": true
+  },
+  "end_to_end_subject_consistency_result": {
+    "subject_id": "OAS1_0016",
+    "true_class": "Very mild Dementia",
+    "number_of_slices": 183,
+    "expected_number_of_slices": 183,
+    "full_test_input_rows": 6954,
+    "full_test_current_predictions": 6954,
+    "full_test_filename_order_preserved": true,
+    "full_test_subject_id_alignment_preserved": true,
+    "full_test_probabilities_in_range": true,
+    "full_test_max_absolute_slice_probability_difference": 1.1102230246251565e-16,
+    "full_test_mean_absolute_slice_probability_difference": 3.5528204624804735e-17,
+    "saved_e08_mean_probability": 0.550241973942128,
+    "system_mean_model_score": 0.550241973942128,
+    "absolute_difference": 0.0,
+    "saved_e08_predicted_class": "Very mild Dementia",
+    "system_predicted_class": "Very mild Dementia",
+    "threshold": 0.5,
+    "tolerance": 1e-10,
+    "batch_size": 16,
+    "batching_note": "The full E07 frozen test sequence is re-inferred in saved CSV row order with batch size 16 before selecting the subject. This reproduces the original test batch boundaries because CUDA floating-point results can depend slightly on batch shape and boundaries.",
+    "probability_consistency_passed": true,
+    "classification_consistency_passed": true,
+    "slice_count_consistency_passed": true
+  },
+  "functional_scenario_pass_counts": {
+    "total_scenarios": 7,
+    "passed_scenarios": 7,
+    "failed_scenarios": 0,
+    "all_passed": true
+  },
+  "result_presentation_check": {
+    "required_checks": {
+      "analyzed_slice_count": true,
+      "model_name": true,
+      "mean_model_score_wording": true,
+      "decision_threshold": true,
+      "research_classification": true,
+      "research_only_warning": true,
+      "not_clinically_validated": true,
+      "does_not_diagnose_alzheimers": true
+    },
+    "prohibited_phrase_checks": {
+      "diagnosis:": true,
+      "confirmed alzheimer's": true,
+      "clinical diagnosis": true,
+      "disease risk": true
+    },
+    "passed": true
+  },
+  "privacy_storage_findings": {
+    "uploaded_file_bytes_processed_in_memory": true,
+    "application_code_does_not_intentionally_write_uploads_to_disk": true,
+    "no_database_used": true,
+    "no_patient_identity_storage_implemented": true,
+    "static_checks": {
+      "no_upload_write_calls_detected": true,
+      "uses_upload_read": true,
+      "no_database_import_detected": true,
+      "no_patient_identity_storage_detected": true
+    },
+    "limitations": [
+      "no authentication",
+      "no encryption layer added by the application",
+      "no audit log",
+      "no production hardening",
+      "local demo only"
+    ],
+    "security_note": "This is a code-level and behavior-scope check for the local prototype, not a strong security assessment.",
+    "passed": true
+  },
+  "system_configuration": {
+    "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "torch_version": "2.7.1+cu118",
+    "torchvision_version": "0.22.1+cu118",
+    "fastapi_version": "0.141.1",
+    "model_name": "ResNet18 CNN, E07 Attempt 2",
+    "checkpoint_path": "C:\\Users\\fedot\\Documents\\alzheimer-diploma\\experiments\\E07_cnn\\artifacts\\best_resnet18_attempt2.pt",
+    "checkpoint_global_epoch": 10,
+    "device_used": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "input_size": 224,
+    "threshold": 0.5,
+    "aggregation": "mean probability",
+    "maximum_file_count": 300,
+    "maximum_per_file_size_bytes": 10485760,
+    "accepted_extensions": [
+      ".jpeg",
+      ".jpg"
+    ]
+  },
+  "overall_prototype_evaluation_status": "passed",
+  "interpretation": "E11 evaluates implementation behavior only. It does not establish clinical validity, diagnostic safety, hospital readiness, regulatory compliance or real-world clinical effectiveness."
+}

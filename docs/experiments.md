@@ -22,8 +22,8 @@ Do not overwrite historical experiment results when methodology changes.
 | E07 | Transfer-learning CNN | Completed |
 | E08 | CNN subject-level evaluation | Completed |
 | E09 | Random Forest vs CNN comparison | Completed |
-| E10 | Explainability | Optional / not started |
-| E11 | Final information-system evaluation | Current / next mandatory stage |
+| E10 | Explainability | Optional / not performed |
+| E11 | Final information-system evaluation | Current / in progress |
 
 ---
 
@@ -930,7 +930,7 @@ E09 does not establish clinical diagnostic validity or clinical superiority.
 
 ## Status
 
-Optional / not started.
+Optional / not performed.
 
 ## Objective
 
@@ -946,20 +946,48 @@ Explainability results must be interpreted cautiously and must not automatically
 
 ## Status
 
-Current / next mandatory stage.
+Current / in progress.
 
 ## Objective
 
-Evaluate the final research information-system prototype.
+Evaluate the final local research information-system prototype.
 
-Potential evaluation areas:
+E11 evaluates system behavior, not clinical validity.
+
+Evaluation areas:
 
 - correct input handling;
 - preprocessing;
-- model inference;
-- subject-level aggregation;
+- model/checkpoint loading;
+- consistency with saved E07 inference;
+- subject-level mean-probability aggregation;
+- threshold classification at `0.5`;
 - result presentation;
-- error handling;
+- HTTP route behavior;
+- validation and error handling;
+- non-diagnostic wording;
+- absence of intentional permanent upload storage;
 - reproducibility.
 
-Exact requirements will be defined after the ML pipeline is stable.
+## Generated outputs
+
+Planned E11 outputs:
+
+- `experiments/E11_information_system_evaluation/results/pytest_output.txt`;
+- `experiments/E11_information_system_evaluation/results/test_suite_summary.json`;
+- `experiments/E11_information_system_evaluation/results/e07_inference_consistency.csv`;
+- `experiments/E11_information_system_evaluation/results/e07_inference_consistency_summary.json`;
+- `experiments/E11_information_system_evaluation/results/end_to_end_subject_consistency.json`;
+- `experiments/E11_information_system_evaluation/results/functional_scenarios.csv`;
+- `experiments/E11_information_system_evaluation/results/result_presentation_check.json`;
+- `experiments/E11_information_system_evaluation/results/privacy_storage_check.json`;
+- `experiments/E11_information_system_evaluation/results/system_configuration.json`;
+- `experiments/E11_information_system_evaluation/results/e11_summary.json`.
+
+## Interpretation rules
+
+E11 may conclude only that the implemented research prototype behaves consistently with the saved ML pipeline and handles the evaluated usage and error scenarios.
+
+E11 must not be interpreted as evidence of clinical validity, diagnostic safety, hospital readiness, regulatory compliance or real-world clinical effectiveness.
+
+E11 must not be marked completed until the evaluation script has been executed successfully and the saved outputs have been reviewed.

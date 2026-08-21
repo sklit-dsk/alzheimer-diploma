@@ -1,0 +1,8 @@
+scenario,expected_behavior,observed_status_code,passed,short_observation
+GET /,"HTTP 200, upload form visible, research warning visible",200,True,Upload page rendered with research warning.
+POST /predict with no files,"Clean validation response, no traceback displayed",400,True,No-file submission returned a clean error page.
+POST /predict unsupported extension,Unsupported extension rejected,400,True,Unsupported extension rejected before inference.
+POST /predict corrupt JPG bytes,Corrupt JPG rejected,400,True,Corrupt image bytes returned a clean error page.
+POST /predict valid JPG,Successful result page,200,True,Valid JPG returned a subject-level result page.
+POST /predict too many files,Rejected when file count exceeds MAX_FILES_PER_REQUEST,400,True,File-count safety limit was enforced.
+POST /predict oversized file,Rejected when a file exceeds MAX_FILE_SIZE_BYTES,400,True,Per-file size limit was enforced.

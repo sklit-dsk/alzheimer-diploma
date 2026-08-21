@@ -1,0 +1,10 @@
+{
+  "total_tests_collected": null,
+  "passed": 11,
+  "failed": null,
+  "errors": null,
+  "return_code": 0,
+  "execution_time_seconds": 16.394298400031403,
+  "overall_passed": true,
+  "parsing_note": "Detailed counts were parsed from pytest output where available; raw stdout/stderr are saved for verification."
+}

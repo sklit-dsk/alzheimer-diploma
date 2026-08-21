@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MRI Research Classification Prototype</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="panel">
+      <p class="eyebrow">Local research demo</p>
+      <h1>MRI Research Classification Prototype</h1>
+      <p class="lead">
+        Upload JPG/JPEG MRI slices belonging to one subject. The files are analyzed
+        together at subject level.
+      </p>
+
+      <div class="warning" role="note">
+        <strong>Research prototype only.</strong>
+        Not clinically validated. Does not diagnose Alzheimer's disease. Does not
+        replace medical assessment.
+      </div>
+
+      <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+        <label for="files">MRI slice images</label>
+        <input id="files" name="files" type="file" accept=".jpg,.jpeg,image/jpeg" multiple required>
+        <p class="hint">
+          Accepted files: JPG/JPEG. Up to {{ max_files }} files, {{ max_file_size_mb }} MB each.
+        </p>
+        <button type="submit">Analyze MRI slices</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

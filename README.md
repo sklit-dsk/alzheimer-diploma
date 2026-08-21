@@ -122,3 +122,31 @@ alzheimer-diploma/
 │
 ├── src/
 └── tests/
+```
+
+---
+
+## Information-system prototype
+
+The repository now contains the minimal local FastAPI layer for the research information-system prototype.
+
+Run locally with:
+
+```bash
+python -m uvicorn information_system.main:app --app-dir src --reload
+```
+
+The prototype allows uploading multiple JPG/JPEG MRI slices belonging to one subject. Uploaded files are processed in memory, passed through the saved E07 ResNet18 Attempt 2 checkpoint, aggregated with mean probability at threshold `0.5`, and shown as one subject-level research classification result.
+
+Prototype scope and privacy limits:
+
+- uploads are processed in memory;
+- there is no intentional permanent image storage;
+- there is no authentication;
+- there is no database;
+- there is no patient identity management;
+- DICOM is not supported;
+- the application is intended for local research/demo use only;
+- it is not production hardened;
+- it is not clinically validated;
+- it does not diagnose Alzheimer's disease or replace medical assessment.

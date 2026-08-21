@@ -1,0 +1,20 @@
+{
+  "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "torch_version": "2.7.1+cu118",
+  "torchvision_version": "0.22.1+cu118",
+  "fastapi_version": "0.141.1",
+  "model_name": "ResNet18 CNN, E07 Attempt 2",
+  "checkpoint_path": "C:\\Users\\fedot\\Documents\\alzheimer-diploma\\experiments\\E07_cnn\\artifacts\\best_resnet18_attempt2.pt",
+  "checkpoint_global_epoch": 10,
+  "device_used": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "input_size": 224,
+  "threshold": 0.5,
+  "aggregation": "mean probability",
+  "maximum_file_count": 300,
+  "maximum_per_file_size_bytes": 10485760,
+  "accepted_extensions": [
+    ".jpeg",
+    ".jpg"
+  ]
+}

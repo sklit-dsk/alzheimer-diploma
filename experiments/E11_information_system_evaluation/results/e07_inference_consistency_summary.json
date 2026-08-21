@@ -1,0 +1,7 @@
+{
+  "number_of_slices_checked": 16,
+  "tolerance": 1e-10,
+  "max_absolute_difference": 1.1102230246251565e-16,
+  "mean_absolute_difference": 1.677802861921318e-17,
+  "passed": true
+}

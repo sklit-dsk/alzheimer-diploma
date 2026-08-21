@@ -1,0 +1,19 @@
+{
+  "required_checks": {
+    "analyzed_slice_count": true,
+    "model_name": true,
+    "mean_model_score_wording": true,
+    "decision_threshold": true,
+    "research_classification": true,
+    "research_only_warning": true,
+    "not_clinically_validated": true,
+    "does_not_diagnose_alzheimers": true
+  },
+  "prohibited_phrase_checks": {
+    "diagnosis:": true,
+    "confirmed alzheimer's": true,
+    "clinical diagnosis": true,
+    "disease risk": true
+  },
+  "passed": true
+}

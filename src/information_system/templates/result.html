@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Classification Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="panel">
+      <p class="eyebrow">Subject-level result</p>
+      <h1>Research classification result</h1>
+
+      <dl class="result-list">
+        <div>
+          <dt>Model</dt>
+          <dd>{{ prediction.model_name }}</dd>
+        </div>
+        <div>
+          <dt>Analyzed slice count</dt>
+          <dd>{{ prediction.number_of_slices }}</dd>
+        </div>
+        <div>
+          <dt>Mean model score for Very mild Dementia</dt>
+          <dd>{{ "%.4f"|format(prediction.mean_model_score) }}</dd>
+        </div>
+        <div>
+          <dt>Decision threshold</dt>
+          <dd>{{ "%.2f"|format(prediction.threshold) }}</dd>
+        </div>
+        <div>
+          <dt>Research classification</dt>
+          <dd class="classification">{{ prediction.predicted_class }}</dd>
+        </div>
+      </dl>
+
+      <div class="warning" role="note">
+        {{ research_warning }}
+      </div>
+
+      <a class="button-link" href="/">Analyze another subject</a>
+    </section>
+  </main>
+</body>
+</html>
