@@ -1,0 +1,5 @@
+variable,total_subjects,available_count,missing_count,missing_percent,conflict_count
+Age,324,324,0,0.0,0
+Sex,324,324,0,0.0,0
+CDR,324,177,147,45.3704,0
+MMSE,324,177,147,45.3704,0

@@ -13,7 +13,7 @@ Do not overwrite historical experiment results when methodology changes.
 | ID | Experiment | Status |
 |---|---|---|
 | E00 | Original Random Forest baseline | Completed |
-| E01 | Clinical metadata and confounder analysis | Current |
+| E01 | Clinical metadata and confounder analysis | Completed |
 | E02 | Cohort construction / age control | Planned |
 | E03 | Clean Random Forest baseline | Planned |
 | E04 | Subject-level aggregation | Planned |
@@ -137,7 +137,7 @@ Future experiments will determine how clinical metadata, cohort construction, su
 
 ## Status
 
-Current.
+Completed.
 
 ## Objective
 
@@ -165,30 +165,113 @@ Where available:
 9. Is a 60+ cohort feasible?
 10. Is approximate age matching feasible?
 
-## Planned outputs
+## Generated outputs
 
-E01 should produce:
+E01 produced:
 
-- merged subject-level metadata table;
-- subject counts;
-- missing-value report;
-- age descriptive statistics;
-- age distribution visualization;
-- sex distribution;
-- CDR distribution;
-- MMSE summary where available;
-- comparison between diagnostic groups;
-- methodological conclusion for E02.
+- `experiments/E01_clinical_metadata/results/scan_level_metadata.csv`;
+- `experiments/E01_clinical_metadata/results/subject_level_metadata.csv`;
+- `experiments/E01_clinical_metadata/results/missing_values.csv`;
+- `experiments/E01_clinical_metadata/results/age_summary.csv`;
+- `experiments/E01_clinical_metadata/results/age_comparison.csv`;
+- `experiments/E01_clinical_metadata/results/age_distribution.png`;
+- `experiments/E01_clinical_metadata/results/sex_distribution.csv`;
+- `experiments/E01_clinical_metadata/results/sex_distribution.png`;
+- `experiments/E01_clinical_metadata/results/cdr_distribution.csv`;
+- `experiments/E01_clinical_metadata/results/cdr_consistency.csv`;
+- `experiments/E01_clinical_metadata/results/mmse_summary.csv`;
+- `experiments/E01_clinical_metadata/results/age_60plus_summary.csv`;
+- `experiments/E01_clinical_metadata/results/age_60plus_comparison.csv`;
+- `experiments/E01_clinical_metadata/results/age_matching_exact_age_counts.csv`;
+- `experiments/E01_clinical_metadata/results/age_matching_5year_bins.csv`;
+- `experiments/E01_clinical_metadata/results/e01_summary.json`.
+
+Additional validation reports were also saved for unmatched scans, unmatched subjects and conflicting values.
 
 ## Confirmed results
 
-Not available yet.
+The binary ImagesOASIS cohort contained:
 
-Do not populate this section until the experiment has actually been executed.
+| Class | Subjects |
+|---|---:|
+| Non Demented | 266 |
+| Very mild Dementia | 58 |
+| Total | 324 |
+
+The scan-level metadata table contained 343 unique scans.
+
+Clinical metadata matching coverage was complete:
+
+| Unit | Matched | Total | Coverage |
+|---|---:|---:|---:|
+| Scans | 343 | 343 | 100.0% |
+| Subjects with all scans matched | 324 | 324 | 100.0% |
+
+Subject-level missing values:
+
+| Variable | Available | Missing | Missing % |
+|---|---:|---:|---:|
+| Age | 324 | 0 | 0.0 |
+| Sex | 324 | 0 | 0.0 |
+| CDR | 177 | 147 | 45.3704 |
+| MMSE | 177 | 147 | 45.3704 |
+
+No scan-level or subject-level clinical value conflicts were detected.
+
+CDR consistency:
+
+| Class | Expected CDR when available | Available CDR | Missing CDR | Inconsistent CDR |
+|---|---:|---:|---:|---:|
+| Non Demented | 0.0 | 119 | 147 | 0 |
+| Very mild Dementia | 0.5 | 58 | 0 | 0 |
+
+Missing CDR was preserved as missing and was not interpreted as CDR = 0.
+
+Age summary in the original binary groups:
+
+| Class | n | Mean | Median | Min | Max | Q1 | Q3 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Non Demented | 266 | 45.7819548872 | 43.5 | 18.0 | 94.0 | 22.0 | 69.0 |
+| Very mild Dementia | 58 | 75.9655172414 | 77.0 | 62.0 | 90.0 | 71.0 | 81.0 |
+
+Age comparison in the original binary groups:
+
+| Comparison | Value |
+|---|---:|
+| Mean difference, Very mild Dementia - Non Demented | 30.1835623542 |
+| Median difference | 33.5 |
+| Mann-Whitney U | 12923.0 |
+| Two-sided p-value | 7.552687005154834e-16 |
+| Cliff's delta | 0.6752657506 |
+
+This confirms a strong age imbalance between the original groups. The statistical result must not be interpreted as clinical importance by itself.
+
+Exploratory Age >= 60 cohort:
+
+| Class | Original subjects | Retained subjects | Retained % |
+|---|---:|---:|---:|
+| Non Demented | 266 | 85 | 31.9549 |
+| Very mild Dementia | 58 | 58 | 100.0 |
+
+Age comparison within the exploratory Age >= 60 cohort:
+
+| Comparison | Value |
+|---|---:|
+| Mean difference, Very mild Dementia - Non Demented | -0.4462474645 |
+| Median difference | 3.0 |
+| Mann-Whitney U | 2425.0 |
+| Two-sided p-value | 0.8708722006254727 |
+| Cliff's delta | -0.0162271805 |
+
+This does not prove that the age distributions are identical. However, the severe original age imbalance is substantially reduced within the Age >= 60 cohort.
 
 ## Conclusion
 
-Pending.
+Age is an important potential confounding factor in the original Non Demented vs Very mild Dementia ImagesOASIS groups.
+
+Age >= 60 is selected as the primary cohort strategy to be implemented and formally validated in E02. E01 does not create E02 data and does not train or evaluate a model on the selected cohort.
+
+Approximate age matching remains a possible sensitivity or additional analysis rather than the primary strategy, because it would reduce the available sample further.
 
 ---
 
@@ -202,13 +285,11 @@ Planned.
 
 Construct a methodologically cleaner Non Demented vs Very mild Dementia cohort based on the findings from E01.
 
-Potential strategies include:
+The primary strategy selected from E01 is to restrict the cohort to subjects aged 60+.
 
-- restricting subjects to age 60+;
-- approximate age matching;
-- another justified strategy based on actual metadata.
+E02 must implement and formally validate this cohort before it is used for corrected modeling.
 
-No final strategy has been selected yet.
+Approximate age matching remains a possible sensitivity or additional analysis, but it is not the primary strategy because it would reduce the available sample further.
 
 ---
 

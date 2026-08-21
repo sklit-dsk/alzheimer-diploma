@@ -1,0 +1,3 @@
+class,expected_cdr_when_available,subjects,available_cdr_count,missing_cdr_count,consistent_cdr_count,inconsistent_cdr_count,inconsistent_subject_ids,note
+Non Demented,0.0,266,119,147,119,0,,Missing CDR is kept missing and is not interpreted as 0.
+Very mild Dementia,0.5,58,58,0,58,0,,Missing CDR is kept missing and is not interpreted as 0.

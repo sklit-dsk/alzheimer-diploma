@@ -1,0 +1,3 @@
+class,original_subjects,retained_subjects,retained_percent,count,mean,std,median,min,max,Q1,Q3,note
+Non Demented,266,85,31.9549,85,76.41176470588235,8.897958724774302,74.0,60.0,94.0,70.0,84.0,Exploratory 60+ cohort summary; E01 does not create or validate the E02 cohort dataset.
+Very mild Dementia,58,58,100.0,58,75.96551724137932,6.98611534563412,77.0,62.0,90.0,71.0,81.0,Exploratory 60+ cohort summary; E01 does not create or validate the E02 cohort dataset.

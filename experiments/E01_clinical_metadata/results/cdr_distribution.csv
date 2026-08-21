@@ -1,0 +1,4 @@
+class,CDR,subjects,class_total,percent_within_class
+Non Demented,0.0,119,266,44.7368
+Non Demented,Missing,147,266,55.2632
+Very mild Dementia,0.5,58,58,100.0

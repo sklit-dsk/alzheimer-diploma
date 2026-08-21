@@ -1,0 +1,2 @@
+cohort,comparison,non_demented_n,very_mild_dementia_n,difference_in_means,difference_in_medians,mann_whitney_u_statistic,mann_whitney_p_value,effect_size,effect_size_name,effect_size_direction,test_note
+All binary subjects,Very mild Dementia minus Non Demented,266,58,30.183562354161275,33.5,12923.0,7.552687005154834e-16,0.6752657505833549,Cliff's delta,positive means ages are higher in Very mild Dementia,Two-sided Mann-Whitney U; statistical significance is not clinical importance.
