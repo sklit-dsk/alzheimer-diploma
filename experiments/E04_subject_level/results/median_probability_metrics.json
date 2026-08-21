@@ -1,0 +1,36 @@
+{
+  "experiment_id": "E04",
+  "method": "median_probability",
+  "evaluation_level": "subject",
+  "number_of_subjects": 29,
+  "positive_class": "Very mild Dementia",
+  "default_threshold": 0.5,
+  "score_column": "median_probability",
+  "prediction_column": "median_predicted_label",
+  "tie_handling_rule": null,
+  "accuracy": 0.5862068965517241,
+  "balanced_accuracy": 0.5612745098039216,
+  "sensitivity": 0.4166666666666667,
+  "recall_positive": 0.4166666666666667,
+  "specificity": 0.7058823529411765,
+  "precision": 0.5,
+  "f1_positive": 0.45454545454545453,
+  "f1_macro": 0.5606060606060606,
+  "roc_auc": 0.6617647058823529,
+  "pr_auc": 0.5643022486772487,
+  "confusion_matrix": [
+    [
+      12,
+      5
+    ],
+    [
+      7,
+      5
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Non Demented",
+    "Very mild Dementia"
+  ],
+  "metric_note": "All E04 metrics are calculated from exactly one row per subject."
+}

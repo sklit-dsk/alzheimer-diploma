@@ -1,0 +1,36 @@
+{
+  "experiment_id": "E04",
+  "method": "majority_vote",
+  "evaluation_level": "subject",
+  "number_of_subjects": 29,
+  "positive_class": "Very mild Dementia",
+  "default_threshold": 0.5,
+  "score_column": "positive_vote_fraction",
+  "prediction_column": "majority_vote_predicted_label",
+  "tie_handling_rule": "Majority voting predicts Very mild Dementia only when positive_vote_fraction > 0.5. Exact ties are explicitly flagged and assigned to Non Demented by this strict rule.",
+  "accuracy": 0.6206896551724138,
+  "balanced_accuracy": 0.5906862745098039,
+  "sensitivity": 0.4166666666666667,
+  "recall_positive": 0.4166666666666667,
+  "specificity": 0.7647058823529411,
+  "precision": 0.5555555555555556,
+  "f1_positive": 0.47619047619047616,
+  "f1_macro": 0.5894465894465895,
+  "roc_auc": 0.6764705882352942,
+  "pr_auc": 0.5561421582803161,
+  "confusion_matrix": [
+    [
+      13,
+      4
+    ],
+    [
+      7,
+      5
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Non Demented",
+    "Very mild Dementia"
+  ],
+  "metric_note": "All E04 metrics are calculated from exactly one row per subject."
+}

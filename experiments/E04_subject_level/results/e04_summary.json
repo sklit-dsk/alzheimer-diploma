@@ -1,0 +1,182 @@
+{
+  "experiment_id": "E04",
+  "objective": "Subject-level aggregation of E03 image-level predictions",
+  "number_of_test_subjects": 29,
+  "class_counts": {
+    "Non Demented": 17,
+    "Very mild Dementia": 12
+  },
+  "aggregation_methods": [
+    "mean_probability",
+    "median_probability",
+    "majority_vote"
+  ],
+  "default_threshold": 0.5,
+  "tie_handling_rule": "Majority voting predicts Very mild Dementia only when positive_vote_fraction > 0.5. Exact ties are explicitly flagged and assigned to Non Demented by this strict rule.",
+  "metric_summaries": {
+    "mean_probability": {
+      "experiment_id": "E04",
+      "method": "mean_probability",
+      "evaluation_level": "subject",
+      "number_of_subjects": 29,
+      "positive_class": "Very mild Dementia",
+      "default_threshold": 0.5,
+      "score_column": "mean_probability",
+      "prediction_column": "mean_predicted_label",
+      "tie_handling_rule": null,
+      "accuracy": 0.6206896551724138,
+      "balanced_accuracy": 0.5906862745098039,
+      "sensitivity": 0.4166666666666667,
+      "recall_positive": 0.4166666666666667,
+      "specificity": 0.7647058823529411,
+      "precision": 0.5555555555555556,
+      "f1_positive": 0.47619047619047616,
+      "f1_macro": 0.5894465894465895,
+      "roc_auc": 0.6568627450980392,
+      "pr_auc": 0.5628292497835842,
+      "confusion_matrix": [
+        [
+          13,
+          4
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Non Demented",
+        "Very mild Dementia"
+      ],
+      "metric_note": "All E04 metrics are calculated from exactly one row per subject."
+    },
+    "median_probability": {
+      "experiment_id": "E04",
+      "method": "median_probability",
+      "evaluation_level": "subject",
+      "number_of_subjects": 29,
+      "positive_class": "Very mild Dementia",
+      "default_threshold": 0.5,
+      "score_column": "median_probability",
+      "prediction_column": "median_predicted_label",
+      "tie_handling_rule": null,
+      "accuracy": 0.5862068965517241,
+      "balanced_accuracy": 0.5612745098039216,
+      "sensitivity": 0.4166666666666667,
+      "recall_positive": 0.4166666666666667,
+      "specificity": 0.7058823529411765,
+      "precision": 0.5,
+      "f1_positive": 0.45454545454545453,
+      "f1_macro": 0.5606060606060606,
+      "roc_auc": 0.6617647058823529,
+      "pr_auc": 0.5643022486772487,
+      "confusion_matrix": [
+        [
+          12,
+          5
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Non Demented",
+        "Very mild Dementia"
+      ],
+      "metric_note": "All E04 metrics are calculated from exactly one row per subject."
+    },
+    "majority_vote": {
+      "experiment_id": "E04",
+      "method": "majority_vote",
+      "evaluation_level": "subject",
+      "number_of_subjects": 29,
+      "positive_class": "Very mild Dementia",
+      "default_threshold": 0.5,
+      "score_column": "positive_vote_fraction",
+      "prediction_column": "majority_vote_predicted_label",
+      "tie_handling_rule": "Majority voting predicts Very mild Dementia only when positive_vote_fraction > 0.5. Exact ties are explicitly flagged and assigned to Non Demented by this strict rule.",
+      "accuracy": 0.6206896551724138,
+      "balanced_accuracy": 0.5906862745098039,
+      "sensitivity": 0.4166666666666667,
+      "recall_positive": 0.4166666666666667,
+      "specificity": 0.7647058823529411,
+      "precision": 0.5555555555555556,
+      "f1_positive": 0.47619047619047616,
+      "f1_macro": 0.5894465894465895,
+      "roc_auc": 0.6764705882352942,
+      "pr_auc": 0.5561421582803161,
+      "confusion_matrix": [
+        [
+          13,
+          4
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Non Demented",
+        "Very mild Dementia"
+      ],
+      "metric_note": "All E04 metrics are calculated from exactly one row per subject."
+    }
+  },
+  "best_performing_method_by_selected_descriptive_metrics": {
+    "balanced_accuracy": {
+      "value": 0.5906862745098039,
+      "methods": [
+        "mean_probability",
+        "majority_vote"
+      ]
+    },
+    "sensitivity": {
+      "value": 0.4166666666666667,
+      "methods": [
+        "mean_probability",
+        "median_probability",
+        "majority_vote"
+      ]
+    },
+    "specificity": {
+      "value": 0.7647058823529411,
+      "methods": [
+        "mean_probability",
+        "majority_vote"
+      ]
+    },
+    "f1_positive": {
+      "value": 0.47619047619047616,
+      "methods": [
+        "mean_probability",
+        "majority_vote"
+      ]
+    },
+    "f1_macro": {
+      "value": 0.5894465894465895,
+      "methods": [
+        "mean_probability",
+        "majority_vote"
+      ]
+    },
+    "roc_auc": {
+      "value": 0.6764705882352942,
+      "methods": [
+        "majority_vote"
+      ]
+    },
+    "pr_auc": {
+      "value": 0.5643022486772487,
+      "methods": [
+        "median_probability"
+      ]
+    }
+  },
+  "methodological_recommendation_note": "Do not select a final aggregation strategy from one metric alone. The E04 recommendation should consider sensitivity, specificity and stability, and threshold behavior must be analyzed separately in E05.",
+  "important_limitations": [
+    "Metrics are subject-level and use exactly one row per subject.",
+    "The test set contains only 29 subjects.",
+    "E04 uses the default 0.5 rule only; threshold optimization belongs to E05."
+  ]
+}
