@@ -1,0 +1,5 @@
+split,class,subjects_before_balancing,images_before_balancing,subjects_after_balancing,images_after_balancing
+train,Non Demented,68,16531,68,10919
+train,Very mild Dementia,46,10919,46,10919
+test,Non Demented,17,4148,17,2806
+test,Very mild Dementia,12,2806,12,2806

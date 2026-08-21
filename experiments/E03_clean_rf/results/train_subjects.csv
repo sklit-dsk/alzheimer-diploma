@@ -1,0 +1,115 @@
+split,subject_id,class,images_before_balancing,images_after_balancing,represented_after_balancing
+train,OAS1_0001,Non Demented,244,153,True
+train,OAS1_0010,Non Demented,244,161,True
+train,OAS1_0013,Non Demented,244,165,True
+train,OAS1_0032,Non Demented,244,169,True
+train,OAS1_0033,Non Demented,244,152,True
+train,OAS1_0062,Non Demented,244,162,True
+train,OAS1_0064,Non Demented,244,164,True
+train,OAS1_0065,Non Demented,244,160,True
+train,OAS1_0068,Non Demented,244,160,True
+train,OAS1_0072,Non Demented,244,171,True
+train,OAS1_0083,Non Demented,244,169,True
+train,OAS1_0085,Non Demented,244,176,True
+train,OAS1_0109,Non Demented,244,150,True
+train,OAS1_0110,Non Demented,244,167,True
+train,OAS1_0112,Non Demented,244,163,True
+train,OAS1_0113,Non Demented,244,170,True
+train,OAS1_0114,Non Demented,244,174,True
+train,OAS1_0130,Non Demented,244,147,True
+train,OAS1_0133,Non Demented,244,167,True
+train,OAS1_0135,Non Demented,244,167,True
+train,OAS1_0138,Non Demented,244,157,True
+train,OAS1_0165,Non Demented,183,126,True
+train,OAS1_0170,Non Demented,244,153,True
+train,OAS1_0176,Non Demented,244,167,True
+train,OAS1_0180,Non Demented,244,171,True
+train,OAS1_0195,Non Demented,244,159,True
+train,OAS1_0197,Non Demented,244,164,True
+train,OAS1_0199,Non Demented,183,112,True
+train,OAS1_0200,Non Demented,244,150,True
+train,OAS1_0201,Non Demented,244,167,True
+train,OAS1_0203,Non Demented,244,163,True
+train,OAS1_0206,Non Demented,244,157,True
+train,OAS1_0212,Non Demented,244,161,True
+train,OAS1_0216,Non Demented,244,158,True
+train,OAS1_0220,Non Demented,244,148,True
+train,OAS1_0221,Non Demented,244,164,True
+train,OAS1_0228,Non Demented,244,152,True
+train,OAS1_0234,Non Demented,244,149,True
+train,OAS1_0237,Non Demented,244,165,True
+train,OAS1_0241,Non Demented,244,153,True
+train,OAS1_0244,Non Demented,244,157,True
+train,OAS1_0254,Non Demented,366,232,True
+train,OAS1_0255,Non Demented,244,158,True
+train,OAS1_0259,Non Demented,244,157,True
+train,OAS1_0260,Non Demented,244,164,True
+train,OAS1_0270,Non Demented,244,148,True
+train,OAS1_0271,Non Demented,244,168,True
+train,OAS1_0279,Non Demented,244,169,True
+train,OAS1_0280,Non Demented,244,158,True
+train,OAS1_0284,Non Demented,244,161,True
+train,OAS1_0292,Non Demented,244,157,True
+train,OAS1_0293,Non Demented,244,150,True
+train,OAS1_0301,Non Demented,244,159,True
+train,OAS1_0303,Non Demented,244,153,True
+train,OAS1_0317,Non Demented,244,166,True
+train,OAS1_0322,Non Demented,244,167,True
+train,OAS1_0330,Non Demented,244,164,True
+train,OAS1_0332,Non Demented,244,163,True
+train,OAS1_0337,Non Demented,183,112,True
+train,OAS1_0338,Non Demented,244,168,True
+train,OAS1_0341,Non Demented,244,163,True
+train,OAS1_0343,Non Demented,244,163,True
+train,OAS1_0354,Non Demented,244,164,True
+train,OAS1_0355,Non Demented,244,172,True
+train,OAS1_0356,Non Demented,244,165,True
+train,OAS1_0358,Non Demented,244,168,True
+train,OAS1_0369,Non Demented,244,169,True
+train,OAS1_0371,Non Demented,244,161,True
+train,OAS1_0003,Very mild Dementia,244,244,True
+train,OAS1_0015,Very mild Dementia,183,183,True
+train,OAS1_0023,Very mild Dementia,244,244,True
+train,OAS1_0039,Very mild Dementia,183,183,True
+train,OAS1_0041,Very mild Dementia,244,244,True
+train,OAS1_0042,Very mild Dementia,244,244,True
+train,OAS1_0046,Very mild Dementia,244,244,True
+train,OAS1_0060,Very mild Dementia,244,244,True
+train,OAS1_0066,Very mild Dementia,244,244,True
+train,OAS1_0082,Very mild Dementia,244,244,True
+train,OAS1_0084,Very mild Dementia,244,244,True
+train,OAS1_0098,Very mild Dementia,244,244,True
+train,OAS1_0115,Very mild Dementia,244,244,True
+train,OAS1_0123,Very mild Dementia,244,244,True
+train,OAS1_0124,Very mild Dementia,244,244,True
+train,OAS1_0143,Very mild Dementia,244,244,True
+train,OAS1_0155,Very mild Dementia,244,244,True
+train,OAS1_0158,Very mild Dementia,244,244,True
+train,OAS1_0161,Very mild Dementia,244,244,True
+train,OAS1_0166,Very mild Dementia,244,244,True
+train,OAS1_0179,Very mild Dementia,244,244,True
+train,OAS1_0205,Very mild Dementia,244,244,True
+train,OAS1_0210,Very mild Dementia,244,244,True
+train,OAS1_0217,Very mild Dementia,244,244,True
+train,OAS1_0226,Very mild Dementia,244,244,True
+train,OAS1_0233,Very mild Dementia,244,244,True
+train,OAS1_0238,Very mild Dementia,244,244,True
+train,OAS1_0240,Very mild Dementia,183,183,True
+train,OAS1_0243,Very mild Dementia,244,244,True
+train,OAS1_0247,Very mild Dementia,244,244,True
+train,OAS1_0263,Very mild Dementia,244,244,True
+train,OAS1_0267,Very mild Dementia,183,183,True
+train,OAS1_0272,Very mild Dementia,244,244,True
+train,OAS1_0273,Very mild Dementia,183,183,True
+train,OAS1_0286,Very mild Dementia,244,244,True
+train,OAS1_0287,Very mild Dementia,244,244,True
+train,OAS1_0290,Very mild Dementia,244,244,True
+train,OAS1_0298,Very mild Dementia,244,244,True
+train,OAS1_0300,Very mild Dementia,244,244,True
+train,OAS1_0304,Very mild Dementia,244,244,True
+train,OAS1_0307,Very mild Dementia,244,244,True
+train,OAS1_0315,Very mild Dementia,244,244,True
+train,OAS1_0329,Very mild Dementia,244,244,True
+train,OAS1_0335,Very mild Dementia,244,244,True
+train,OAS1_0362,Very mild Dementia,244,244,True
+train,OAS1_0380,Very mild Dementia,244,244,True

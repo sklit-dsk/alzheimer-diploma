@@ -3,6 +3,8 @@ numpy
 scikit-learn
 matplotlib
 scipy
+Pillow
+scikit-image
 openpyxl
 jupyter
 ipykernel

@@ -1,0 +1,30 @@
+split,subject_id,class,images_before_balancing,images_after_balancing,represented_after_balancing
+test,OAS1_0019,Non Demented,244,161,True
+test,OAS1_0030,Non Demented,244,169,True
+test,OAS1_0070,Non Demented,244,163,True
+test,OAS1_0075,Non Demented,244,168,True
+test,OAS1_0078,Non Demented,244,173,True
+test,OAS1_0106,Non Demented,244,160,True
+test,OAS1_0139,Non Demented,244,171,True
+test,OAS1_0146,Non Demented,244,162,True
+test,OAS1_0157,Non Demented,244,166,True
+test,OAS1_0169,Non Demented,244,169,True
+test,OAS1_0186,Non Demented,244,169,True
+test,OAS1_0256,Non Demented,244,168,True
+test,OAS1_0299,Non Demented,244,167,True
+test,OAS1_0326,Non Demented,244,152,True
+test,OAS1_0342,Non Demented,244,159,True
+test,OAS1_0363,Non Demented,244,162,True
+test,OAS1_0365,Non Demented,244,167,True
+test,OAS1_0016,Very mild Dementia,183,183,True
+test,OAS1_0021,Very mild Dementia,244,244,True
+test,OAS1_0022,Very mild Dementia,244,244,True
+test,OAS1_0094,Very mild Dementia,244,244,True
+test,OAS1_0120,Very mild Dementia,244,244,True
+test,OAS1_0142,Very mild Dementia,244,244,True
+test,OAS1_0164,Very mild Dementia,244,244,True
+test,OAS1_0288,Very mild Dementia,244,244,True
+test,OAS1_0312,Very mild Dementia,244,244,True
+test,OAS1_0339,Very mild Dementia,244,244,True
+test,OAS1_0352,Very mild Dementia,183,183,True
+test,OAS1_0374,Very mild Dementia,244,244,True

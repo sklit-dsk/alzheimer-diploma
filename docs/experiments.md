@@ -15,7 +15,7 @@ Do not overwrite historical experiment results when methodology changes.
 | E00 | Original Random Forest baseline | Completed |
 | E01 | Clinical metadata and confounder analysis | Completed |
 | E02 | Cohort construction / age control | Completed |
-| E03 | Clean Random Forest baseline | Planned |
+| E03 | Clean Random Forest baseline | Completed |
 | E04 | Subject-level aggregation | Planned |
 | E05 | Threshold and sensitivity-specificity analysis | Planned |
 | E06 | Corrected Feature Importance | Planned |
@@ -350,13 +350,109 @@ Approximate age matching remains optional as a sensitivity or additional analysi
 
 ## Status
 
-Planned.
+Completed.
 
 ## Objective
 
 Repeat the Random Forest baseline using the cohort selected in E02.
 
 The experiment should preserve subject-level separation and provide a clean baseline for comparison with later models.
+
+E03 must use the E02 Age >= 60 cohort and reproduce the E00 handcrafted-feature Random Forest baseline as faithfully as possible without hyperparameter tuning, threshold optimization or subject-level aggregation.
+
+## Generated outputs
+
+E03 produced:
+
+- `experiments/E03_clean_rf/artifacts/e02_full_features.pkl`;
+- `experiments/E03_clean_rf/artifacts/binary_train_features.pkl`;
+- `experiments/E03_clean_rf/artifacts/binary_test_features.pkl`;
+- `experiments/E03_clean_rf/results/selected_image_metadata.csv`;
+- `experiments/E03_clean_rf/results/train_subjects.csv`;
+- `experiments/E03_clean_rf/results/test_subjects.csv`;
+- `experiments/E03_clean_rf/results/split_summary.csv`;
+- `experiments/E03_clean_rf/results/subjects_eliminated_by_balancing.csv`;
+- `experiments/E03_clean_rf/results/image_level_predictions.csv`;
+- `experiments/E03_clean_rf/results/image_level_metrics.json`;
+- `experiments/E03_clean_rf/results/image_level_classification_report.csv`;
+- `experiments/E03_clean_rf/results/image_level_confusion_matrix.csv`;
+- `experiments/E03_clean_rf/results/image_level_confusion_matrix.png`;
+- `experiments/E03_clean_rf/results/feature_importance.csv`;
+- `experiments/E03_clean_rf/results/legacy_unadjusted_category_importance.csv`;
+- `experiments/E03_clean_rf/results/top20_permutation_importance.png`;
+- `experiments/E03_clean_rf/results/validation_summary.json`.
+
+## Confirmed results
+
+E03 reproduced the E00-style handcrafted-feature Random Forest baseline on the E02 Age >= 60 cohort.
+
+E03 cohort and validation:
+
+| Item | Value |
+|---|---:|
+| Total subjects | 143 |
+| Non Demented subjects | 85 |
+| Very mild Dementia subjects | 58 |
+| Total scans | 143 |
+| Selected images | 34,404 |
+| Handcrafted features | 89 |
+| Train/test subject overlap | 0 |
+
+Subject split:
+
+| Split | Non Demented subjects | Very mild Dementia subjects |
+|---|---:|---:|
+| Train | 68 | 46 |
+| Test | 17 | 12 |
+
+Image counts before balancing:
+
+| Split | Non Demented images | Very mild Dementia images |
+|---|---:|---:|
+| Train | 16,531 | 10,919 |
+| Test | 4,148 | 2,806 |
+
+Image counts after balancing:
+
+| Split | Non Demented images | Very mild Dementia images |
+|---|---:|---:|
+| Train | 10,919 | 10,919 |
+| Test | 2,806 | 2,806 |
+
+No subjects were eliminated by image-level undersampling.
+
+Confirmed image/slice-level metrics:
+
+| Metric | Value |
+|---|---:|
+| Accuracy | 0.5787598004 |
+| Balanced accuracy | 0.5787598004 |
+| Macro F1 | 0.5732442943 |
+| ROC-AUC | 0.6254816707 |
+
+Class recall:
+
+| Class | Recall |
+|---|---:|
+| Non Demented | 0.6924447612 |
+| Very mild Dementia | 0.4650748396 |
+
+Confusion matrix:
+
+| Actual / Predicted | Non Demented | Very mild Dementia |
+|---|---:|---:|
+| Non Demented | 1,943 | 863 |
+| Very mild Dementia | 1,501 | 1,305 |
+
+## Conclusion
+
+E03 confirms that the E00-style Random Forest can be reproduced on the E02 Age >= 60 cohort.
+
+The metrics remain image/slice-level only and must not be treated as final model performance.
+
+The decrease in ROC-AUC relative to E00 is evidence that cohort construction materially changes observed model performance, but it is not proof that age alone caused the difference.
+
+Subject-level evaluation is still required in E04 before drawing final conclusions about model performance.
 
 ---
 

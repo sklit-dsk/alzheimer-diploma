@@ -1,0 +1,7 @@
+category,legacy_unadjusted_positive_permutation_importance,interpretation_note
+Regional intensity / contrast,0.10838382038489071,Legacy unadjusted summed category importance for E00 comparability only; corrected grouped Feature Importance belongs to E06.
+Shape / brain mask geometry,0.015547042052744223,Legacy unadjusted summed category importance for E00 comparability only; corrected grouped Feature Importance belongs to E06.
+Global intensity / contrast,0.013431040627227622,Legacy unadjusted summed category importance for E00 comparability only; corrected grouped Feature Importance belongs to E06.
+Texture: Local Binary Pattern,0.0034301496792588093,Legacy unadjusted summed category importance for E00 comparability only; corrected grouped Feature Importance belongs to E06.
+Edges / structural boundaries,0.0,Legacy unadjusted summed category importance for E00 comparability only; corrected grouped Feature Importance belongs to E06.
+Intensity distribution,0.0,Legacy unadjusted summed category importance for E00 comparability only; corrected grouped Feature Importance belongs to E06.
