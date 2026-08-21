@@ -1,0 +1,215 @@
+{
+  "experiment_id": "E02",
+  "objective": "Cohort construction and age control",
+  "primary_strategy": "Age >= 60",
+  "binary_classes": [
+    "Non Demented",
+    "Very mild Dementia"
+  ],
+  "subject_counts": {
+    "Non Demented": 85,
+    "Very mild Dementia": 58
+  },
+  "total_subjects": 143,
+  "scan_counts": {
+    "total_scans": 143,
+    "subjects_with_scans": 143
+  },
+  "retained_percentages_relative_to_e01_binary_cohort": [
+    {
+      "class": "Non Demented",
+      "original_e01_binary_subjects": 266,
+      "retained_e02_subjects": 85,
+      "retained_percent": 31.9549
+    },
+    {
+      "class": "Very mild Dementia",
+      "original_e01_binary_subjects": 58,
+      "retained_e02_subjects": 58,
+      "retained_percent": 100.0
+    }
+  ],
+  "age_statistics": [
+    {
+      "class": "Non Demented",
+      "count": 85,
+      "mean": 76.41176470588235,
+      "std": 8.897958724774302,
+      "median": 74.0,
+      "min": 60.0,
+      "max": 94.0,
+      "Q1": 70.0,
+      "Q3": 84.0
+    },
+    {
+      "class": "Very mild Dementia",
+      "count": 58,
+      "mean": 75.96551724137932,
+      "std": 6.98611534563412,
+      "median": 77.0,
+      "min": 62.0,
+      "max": 90.0,
+      "Q1": 71.0,
+      "Q3": 81.0
+    }
+  ],
+  "age_comparison": [
+    {
+      "cohort": "Age >= 60",
+      "comparison": "Very mild Dementia minus Non Demented",
+      "non_demented_n": 85,
+      "very_mild_dementia_n": 58,
+      "difference_in_means": -0.4462474645030312,
+      "difference_in_medians": 3.0,
+      "mann_whitney_u_statistic": 2425.0,
+      "mann_whitney_p_value": 0.8708722006254727,
+      "effect_size": -0.016227180527383367,
+      "effect_size_name": "Cliff's delta",
+      "effect_size_direction": "positive means ages are higher in Very mild Dementia",
+      "test_note": "Two-sided Mann-Whitney U; statistical significance is not clinical importance."
+    }
+  ],
+  "sex_distribution": [
+    {
+      "class": "Non Demented",
+      "Sex": "F",
+      "subjects": 62,
+      "class_total": 85,
+      "percent_within_class": 72.9412
+    },
+    {
+      "class": "Non Demented",
+      "Sex": "M",
+      "subjects": 23,
+      "class_total": 85,
+      "percent_within_class": 27.0588
+    },
+    {
+      "class": "Very mild Dementia",
+      "Sex": "F",
+      "subjects": 32,
+      "class_total": 58,
+      "percent_within_class": 55.1724
+    },
+    {
+      "class": "Very mild Dementia",
+      "Sex": "M",
+      "subjects": 26,
+      "class_total": 58,
+      "percent_within_class": 44.8276
+    }
+  ],
+  "cdr_distribution": [
+    {
+      "class": "Non Demented",
+      "CDR": "0.0",
+      "subjects": 85,
+      "class_total": 85,
+      "percent_within_class": 100.0
+    },
+    {
+      "class": "Very mild Dementia",
+      "CDR": "0.5",
+      "subjects": 58,
+      "class_total": 58,
+      "percent_within_class": 100.0
+    }
+  ],
+  "CDR_consistency": [
+    {
+      "class": "Non Demented",
+      "expected_cdr_when_available": 0.0,
+      "subjects": 85,
+      "available_cdr_count": 85,
+      "missing_cdr_count": 0,
+      "consistent_cdr_count": 85,
+      "inconsistent_cdr_count": 0,
+      "inconsistent_subject_ids": "",
+      "note": "Missing CDR remains missing and is not interpreted as 0."
+    },
+    {
+      "class": "Very mild Dementia",
+      "expected_cdr_when_available": 0.5,
+      "subjects": 58,
+      "available_cdr_count": 58,
+      "missing_cdr_count": 0,
+      "consistent_cdr_count": 58,
+      "inconsistent_cdr_count": 0,
+      "inconsistent_subject_ids": "",
+      "note": "Missing CDR remains missing and is not interpreted as 0."
+    }
+  ],
+  "MMSE_summary": [
+    {
+      "class": "Non Demented",
+      "count": 85,
+      "mean": 28.988235294117647,
+      "std": 1.2295384117148813,
+      "median": 29.0,
+      "min": 25.0,
+      "max": 30.0,
+      "Q1": 28.0,
+      "Q3": 30.0
+    },
+    {
+      "class": "Very mild Dementia",
+      "count": 58,
+      "mean": 25.413793103448278,
+      "std": 3.670816548382856,
+      "median": 26.5,
+      "min": 14.0,
+      "max": 30.0,
+      "Q1": 23.0,
+      "Q3": 28.0
+    }
+  ],
+  "missing_values": [
+    {
+      "variable": "Age",
+      "total_subjects": 143,
+      "available_count": 143,
+      "missing_count": 0,
+      "missing_percent": 0.0
+    },
+    {
+      "variable": "Sex",
+      "total_subjects": 143,
+      "available_count": 143,
+      "missing_count": 0,
+      "missing_percent": 0.0
+    },
+    {
+      "variable": "CDR",
+      "total_subjects": 143,
+      "available_count": 143,
+      "missing_count": 0,
+      "missing_percent": 0.0
+    },
+    {
+      "variable": "MMSE",
+      "total_subjects": 143,
+      "available_count": 143,
+      "missing_count": 0,
+      "missing_percent": 0.0
+    }
+  ],
+  "validation": {
+    "expected_subject_counts": {
+      "Non Demented": 85,
+      "Very mild Dementia": 58
+    },
+    "age_missing": 0,
+    "sex_missing": 0,
+    "duplicate_subject_id_rows": 0,
+    "subjects_without_scans": 0,
+    "excluded_subjects_in_scan_cohort": 0
+  },
+  "interpretation_rules": [
+    "E02 constructs the Age >= 60 cohort selected from E01.",
+    "Missing CDR remains missing and is not interpreted as 0.",
+    "The Mann-Whitney U p-value is not interpreted as clinical importance.",
+    "Approximate age matching remains optional or a sensitivity analysis.",
+    "No model is trained or evaluated in E02."
+  ],
+  "input_subject_rows": 324
+}

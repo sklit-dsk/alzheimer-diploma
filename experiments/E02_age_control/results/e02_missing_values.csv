@@ -1,0 +1,5 @@
+variable,total_subjects,available_count,missing_count,missing_percent
+Age,143,143,0,0.0
+Sex,143,143,0,0.0
+CDR,143,143,0,0.0
+MMSE,143,143,0,0.0

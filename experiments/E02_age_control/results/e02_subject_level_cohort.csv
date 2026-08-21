@@ -1,0 +1,144 @@
+subject_id,class,Age,Sex,CDR,MMSE,number_of_scans,number_of_images
+OAS1_0001,Non Demented,74.0,F,0.0,29.0,1,244
+OAS1_0010,Non Demented,74.0,M,0.0,30.0,1,244
+OAS1_0013,Non Demented,81.0,F,0.0,30.0,1,244
+OAS1_0019,Non Demented,89.0,F,0.0,30.0,1,244
+OAS1_0030,Non Demented,65.0,F,0.0,29.0,1,244
+OAS1_0032,Non Demented,89.0,M,0.0,28.0,1,244
+OAS1_0033,Non Demented,80.0,F,0.0,29.0,1,244
+OAS1_0062,Non Demented,73.0,F,0.0,30.0,1,244
+OAS1_0064,Non Demented,77.0,F,0.0,29.0,1,244
+OAS1_0065,Non Demented,90.0,M,0.0,25.0,1,244
+OAS1_0068,Non Demented,67.0,F,0.0,30.0,1,244
+OAS1_0070,Non Demented,63.0,F,0.0,30.0,1,244
+OAS1_0072,Non Demented,60.0,F,0.0,30.0,1,244
+OAS1_0075,Non Demented,83.0,F,0.0,30.0,1,244
+OAS1_0078,Non Demented,64.0,F,0.0,30.0,1,244
+OAS1_0083,Non Demented,90.0,F,0.0,27.0,1,244
+OAS1_0085,Non Demented,70.0,F,0.0,29.0,1,244
+OAS1_0106,Non Demented,81.0,F,0.0,30.0,1,244
+OAS1_0109,Non Demented,61.0,F,0.0,30.0,1,244
+OAS1_0110,Non Demented,84.0,M,0.0,28.0,1,244
+OAS1_0112,Non Demented,69.0,F,0.0,29.0,1,244
+OAS1_0113,Non Demented,83.0,F,0.0,29.0,1,244
+OAS1_0114,Non Demented,62.0,M,0.0,30.0,1,244
+OAS1_0130,Non Demented,68.0,M,0.0,26.0,1,244
+OAS1_0133,Non Demented,65.0,F,0.0,30.0,1,244
+OAS1_0135,Non Demented,64.0,M,0.0,29.0,1,244
+OAS1_0138,Non Demented,80.0,M,0.0,28.0,1,244
+OAS1_0139,Non Demented,72.0,F,0.0,28.0,1,244
+OAS1_0146,Non Demented,82.0,F,0.0,28.0,1,244
+OAS1_0157,Non Demented,86.0,F,0.0,30.0,1,244
+OAS1_0165,Non Demented,74.0,F,0.0,29.0,1,183
+OAS1_0169,Non Demented,88.0,F,0.0,30.0,1,244
+OAS1_0170,Non Demented,71.0,M,0.0,29.0,1,244
+OAS1_0176,Non Demented,88.0,F,0.0,29.0,1,244
+OAS1_0180,Non Demented,80.0,F,0.0,30.0,1,244
+OAS1_0186,Non Demented,84.0,M,0.0,29.0,1,244
+OAS1_0195,Non Demented,76.0,F,0.0,28.0,1,244
+OAS1_0197,Non Demented,89.0,F,0.0,29.0,1,244
+OAS1_0199,Non Demented,69.0,M,0.0,30.0,1,183
+OAS1_0200,Non Demented,60.0,F,0.0,30.0,1,244
+OAS1_0201,Non Demented,85.0,F,0.0,26.0,1,244
+OAS1_0203,Non Demented,71.0,F,0.0,30.0,1,244
+OAS1_0206,Non Demented,78.0,F,0.0,30.0,1,244
+OAS1_0212,Non Demented,74.0,F,0.0,28.0,1,244
+OAS1_0216,Non Demented,71.0,F,0.0,30.0,1,244
+OAS1_0220,Non Demented,75.0,F,0.0,30.0,1,244
+OAS1_0221,Non Demented,94.0,F,0.0,29.0,1,244
+OAS1_0228,Non Demented,81.0,F,0.0,28.0,1,244
+OAS1_0234,Non Demented,75.0,M,0.0,29.0,1,244
+OAS1_0237,Non Demented,72.0,F,0.0,27.0,1,244
+OAS1_0241,Non Demented,74.0,F,0.0,30.0,1,244
+OAS1_0244,Non Demented,80.0,F,0.0,29.0,1,244
+OAS1_0254,Non Demented,85.0,F,0.0,29.0,1,366
+OAS1_0255,Non Demented,71.0,F,0.0,30.0,1,244
+OAS1_0256,Non Demented,70.0,M,0.0,30.0,1,244
+OAS1_0259,Non Demented,78.0,F,0.0,29.0,1,244
+OAS1_0260,Non Demented,87.0,M,0.0,30.0,1,244
+OAS1_0270,Non Demented,93.0,F,0.0,30.0,1,244
+OAS1_0271,Non Demented,89.0,F,0.0,27.0,1,244
+OAS1_0279,Non Demented,73.0,F,0.0,30.0,1,244
+OAS1_0280,Non Demented,78.0,F,0.0,30.0,1,244
+OAS1_0284,Non Demented,91.0,F,0.0,30.0,1,244
+OAS1_0292,Non Demented,64.0,F,0.0,30.0,1,244
+OAS1_0293,Non Demented,69.0,F,0.0,26.0,1,244
+OAS1_0299,Non Demented,90.0,F,0.0,29.0,1,244
+OAS1_0301,Non Demented,90.0,F,0.0,28.0,1,244
+OAS1_0303,Non Demented,67.0,F,0.0,30.0,1,244
+OAS1_0317,Non Demented,86.0,M,0.0,26.0,1,244
+OAS1_0322,Non Demented,65.0,F,0.0,29.0,1,244
+OAS1_0326,Non Demented,73.0,F,0.0,29.0,1,244
+OAS1_0330,Non Demented,80.0,F,0.0,27.0,1,244
+OAS1_0332,Non Demented,72.0,M,0.0,29.0,1,244
+OAS1_0337,Non Demented,81.0,M,0.0,28.0,1,183
+OAS1_0338,Non Demented,77.0,M,0.0,29.0,1,244
+OAS1_0341,Non Demented,71.0,F,0.0,30.0,1,244
+OAS1_0342,Non Demented,88.0,F,0.0,28.0,1,244
+OAS1_0343,Non Demented,68.0,M,0.0,30.0,1,244
+OAS1_0354,Non Demented,74.0,M,0.0,26.0,1,244
+OAS1_0355,Non Demented,73.0,F,0.0,29.0,1,244
+OAS1_0356,Non Demented,68.0,F,0.0,30.0,1,244
+OAS1_0358,Non Demented,65.0,M,0.0,29.0,1,244
+OAS1_0363,Non Demented,87.0,M,0.0,30.0,1,244
+OAS1_0365,Non Demented,74.0,M,0.0,30.0,1,244
+OAS1_0369,Non Demented,73.0,F,0.0,28.0,1,244
+OAS1_0371,Non Demented,70.0,F,0.0,30.0,1,244
+OAS1_0003,Very mild Dementia,73.0,F,0.5,27.0,1,244
+OAS1_0015,Very mild Dementia,76.0,M,0.5,28.0,1,183
+OAS1_0016,Very mild Dementia,82.0,M,0.5,27.0,1,183
+OAS1_0021,Very mild Dementia,80.0,F,0.5,23.0,1,244
+OAS1_0022,Very mild Dementia,69.0,F,0.5,23.0,1,244
+OAS1_0023,Very mild Dementia,82.0,M,0.5,27.0,1,244
+OAS1_0039,Very mild Dementia,70.0,M,0.5,29.0,1,183
+OAS1_0041,Very mild Dementia,62.0,F,0.5,28.0,1,244
+OAS1_0042,Very mild Dementia,80.0,M,0.5,29.0,1,244
+OAS1_0046,Very mild Dementia,64.0,M,0.5,22.0,1,244
+OAS1_0060,Very mild Dementia,79.0,M,0.5,29.0,1,244
+OAS1_0066,Very mild Dementia,66.0,F,0.5,28.0,1,244
+OAS1_0082,Very mild Dementia,75.0,F,0.5,28.0,1,244
+OAS1_0084,Very mild Dementia,81.0,F,0.5,27.0,1,244
+OAS1_0094,Very mild Dementia,66.0,F,0.5,30.0,1,244
+OAS1_0098,Very mild Dementia,67.0,F,0.5,18.0,1,244
+OAS1_0115,Very mild Dementia,72.0,M,0.5,26.0,1,244
+OAS1_0120,Very mild Dementia,70.0,M,0.5,26.0,1,244
+OAS1_0123,Very mild Dementia,83.0,F,0.5,24.0,1,244
+OAS1_0124,Very mild Dementia,73.0,M,0.5,23.0,1,244
+OAS1_0142,Very mild Dementia,70.0,M,0.5,27.0,1,244
+OAS1_0143,Very mild Dementia,66.0,M,0.5,30.0,1,244
+OAS1_0155,Very mild Dementia,71.0,M,0.5,28.0,1,244
+OAS1_0158,Very mild Dementia,81.0,M,0.5,26.0,1,244
+OAS1_0161,Very mild Dementia,84.0,F,0.5,27.0,1,244
+OAS1_0164,Very mild Dementia,81.0,F,0.5,28.0,1,244
+OAS1_0166,Very mild Dementia,80.0,F,0.5,27.0,1,244
+OAS1_0179,Very mild Dementia,87.0,F,0.5,21.0,1,244
+OAS1_0205,Very mild Dementia,75.0,M,0.5,30.0,1,244
+OAS1_0210,Very mild Dementia,73.0,F,0.5,28.0,1,244
+OAS1_0217,Very mild Dementia,78.0,F,0.5,27.0,1,244
+OAS1_0226,Very mild Dementia,90.0,M,0.5,23.0,1,244
+OAS1_0233,Very mild Dementia,77.0,F,0.5,20.0,1,244
+OAS1_0238,Very mild Dementia,77.0,F,0.5,28.0,1,244
+OAS1_0240,Very mild Dementia,74.0,F,0.5,26.0,1,183
+OAS1_0243,Very mild Dementia,64.0,M,0.5,22.0,1,244
+OAS1_0247,Very mild Dementia,90.0,M,0.5,21.0,1,244
+OAS1_0263,Very mild Dementia,79.0,M,0.5,30.0,1,244
+OAS1_0267,Very mild Dementia,80.0,M,0.5,28.0,1,183
+OAS1_0272,Very mild Dementia,75.0,F,0.5,26.0,1,244
+OAS1_0273,Very mild Dementia,89.0,F,0.5,18.0,1,183
+OAS1_0286,Very mild Dementia,83.0,F,0.5,20.0,1,244
+OAS1_0287,Very mild Dementia,78.0,F,0.5,21.0,1,244
+OAS1_0288,Very mild Dementia,71.0,M,0.5,20.0,1,244
+OAS1_0290,Very mild Dementia,83.0,M,0.5,26.0,1,244
+OAS1_0298,Very mild Dementia,72.0,F,0.5,24.0,1,244
+OAS1_0300,Very mild Dementia,68.0,M,0.5,30.0,1,244
+OAS1_0304,Very mild Dementia,84.0,M,0.5,29.0,1,244
+OAS1_0307,Very mild Dementia,67.0,M,0.5,23.0,1,244
+OAS1_0312,Very mild Dementia,73.0,F,0.5,26.0,1,244
+OAS1_0315,Very mild Dementia,77.0,M,0.5,25.0,1,244
+OAS1_0329,Very mild Dementia,80.0,F,0.5,29.0,1,244
+OAS1_0335,Very mild Dementia,80.0,F,0.5,27.0,1,244
+OAS1_0339,Very mild Dementia,79.0,F,0.5,24.0,1,244
+OAS1_0352,Very mild Dementia,81.0,F,0.5,26.0,1,183
+OAS1_0362,Very mild Dementia,63.0,F,0.5,14.0,1,244
+OAS1_0374,Very mild Dementia,73.0,F,0.5,29.0,1,244
+OAS1_0380,Very mild Dementia,83.0,F,0.5,18.0,1,244

@@ -14,7 +14,7 @@ Do not overwrite historical experiment results when methodology changes.
 |---|---|---|
 | E00 | Original Random Forest baseline | Completed |
 | E01 | Clinical metadata and confounder analysis | Completed |
-| E02 | Cohort construction / age control | Planned |
+| E02 | Cohort construction / age control | Completed |
 | E03 | Clean Random Forest baseline | Planned |
 | E04 | Subject-level aggregation | Planned |
 | E05 | Threshold and sensitivity-specificity analysis | Planned |
@@ -279,7 +279,7 @@ Approximate age matching remains a possible sensitivity or additional analysis r
 
 ## Status
 
-Planned.
+Completed.
 
 ## Objective
 
@@ -287,9 +287,62 @@ Construct a methodologically cleaner Non Demented vs Very mild Dementia cohort b
 
 The primary strategy selected from E01 is to restrict the cohort to subjects aged 60+.
 
-E02 must implement and formally validate this cohort before it is used for corrected modeling.
+E02 implements and validates this cohort for downstream experiments.
 
 Approximate age matching remains a possible sensitivity or additional analysis, but it is not the primary strategy because it would reduce the available sample further.
+
+## Generated outputs
+
+E02 produced:
+
+- `experiments/E02_age_control/results/e02_subject_level_cohort.csv`;
+- `experiments/E02_age_control/results/e02_scan_level_cohort.csv`;
+- `experiments/E02_age_control/results/e02_age_summary.csv`;
+- `experiments/E02_age_control/results/e02_age_comparison.csv`;
+- `experiments/E02_age_control/results/e02_sex_distribution.csv`;
+- `experiments/E02_age_control/results/e02_cdr_distribution.csv`;
+- `experiments/E02_age_control/results/e02_cdr_consistency.csv`;
+- `experiments/E02_age_control/results/e02_mmse_summary.csv`;
+- `experiments/E02_age_control/results/e02_missing_values.csv`;
+- `experiments/E02_age_control/results/e02_retained_percentages.csv`;
+- `experiments/E02_age_control/results/e02_summary.json`.
+
+## Confirmed results
+
+The E02 Age >= 60 cohort contains:
+
+| Class | Subjects |
+|---|---:|
+| Non Demented | 85 |
+| Very mild Dementia | 58 |
+| Total | 143 |
+
+The scan-level cohort contains 143 scans.
+
+Age statistics:
+
+| Class | Mean | Std | Median | Range |
+|---|---:|---:|---:|---:|
+| Non Demented | 76.411765 | 8.897959 | 74.0 | 60-94 |
+| Very mild Dementia | 75.965517 | 6.986115 | 77.0 | 62-90 |
+
+Age comparison, Very mild Dementia minus Non Demented:
+
+| Measure | Value |
+|---|---:|
+| Mean difference | -0.446247 |
+| Median difference | 3.0 |
+| Mann-Whitney U | 2425.0 |
+| Two-sided p-value | 0.870872 |
+| Cliff's delta | -0.016227 |
+
+## Conclusion
+
+Age >= 60 is the selected primary cohort for downstream experiments.
+
+This cohort substantially reduces the severe original age imbalance documented in E01, but it does not prove that the class age distributions are identical or that all possible confounding has been removed.
+
+Approximate age matching remains optional as a sensitivity or additional analysis.
 
 ---
 

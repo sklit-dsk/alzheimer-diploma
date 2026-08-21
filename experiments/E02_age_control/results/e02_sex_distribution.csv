@@ -1,0 +1,5 @@
+class,Sex,subjects,class_total,percent_within_class
+Non Demented,F,62,85,72.9412
+Non Demented,M,23,85,27.0588
+Very mild Dementia,F,32,58,55.1724
+Very mild Dementia,M,26,58,44.8276
