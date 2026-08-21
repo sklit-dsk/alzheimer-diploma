@@ -1,0 +1,189 @@
+{
+  "experiment_id": "E08",
+  "source_experiment": "E07 Attempt 2",
+  "model": "ResNet18",
+  "objective": "CNN subject-level aggregation of frozen E07 Attempt 2 test predictions",
+  "number_of_test_subjects": 29,
+  "number_of_test_slices": 6954,
+  "class_counts": {
+    "Non Demented": 17,
+    "Very mild Dementia": 12
+  },
+  "aggregation_methods": [
+    "mean_probability",
+    "median_probability",
+    "majority_vote"
+  ],
+  "default_threshold": 0.5,
+  "tie_handling_rule": "Majority voting predicts Very mild Dementia only when positive_vote_fraction > 0.5. Exact ties are explicitly flagged and assigned to Non Demented by this strict rule.",
+  "metric_summaries": {
+    "mean_probability": {
+      "experiment_id": "E08",
+      "source_experiment": "E07 Attempt 2",
+      "model": "ResNet18",
+      "method": "mean_probability",
+      "evaluation_level": "subject",
+      "number_of_subjects": 29,
+      "positive_class": "Very mild Dementia",
+      "default_threshold": 0.5,
+      "score_column": "mean_probability",
+      "prediction_column": "mean_predicted_label",
+      "tie_handling_rule": null,
+      "accuracy": 0.7241379310344828,
+      "balanced_accuracy": 0.7034313725490196,
+      "sensitivity": 0.5833333333333334,
+      "recall_positive": 0.5833333333333334,
+      "specificity": 0.8235294117647058,
+      "precision": 0.7,
+      "f1_positive": 0.6363636363636364,
+      "f1_macro": 0.7070707070707071,
+      "roc_auc": 0.6911764705882353,
+      "pr_auc": 0.6007440476190475,
+      "confusion_matrix": [
+        [
+          14,
+          3
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Non Demented",
+        "Very mild Dementia"
+      ],
+      "metric_note": "All E08 metrics are calculated from exactly one row per subject."
+    },
+    "median_probability": {
+      "experiment_id": "E08",
+      "source_experiment": "E07 Attempt 2",
+      "model": "ResNet18",
+      "method": "median_probability",
+      "evaluation_level": "subject",
+      "number_of_subjects": 29,
+      "positive_class": "Very mild Dementia",
+      "default_threshold": 0.5,
+      "score_column": "median_probability",
+      "prediction_column": "median_predicted_label",
+      "tie_handling_rule": null,
+      "accuracy": 0.6896551724137931,
+      "balanced_accuracy": 0.6740196078431373,
+      "sensitivity": 0.5833333333333334,
+      "recall_positive": 0.5833333333333334,
+      "specificity": 0.7647058823529411,
+      "precision": 0.6363636363636364,
+      "f1_positive": 0.6086956521739131,
+      "f1_macro": 0.675776397515528,
+      "roc_auc": 0.6666666666666666,
+      "pr_auc": 0.5626307720057719,
+      "confusion_matrix": [
+        [
+          13,
+          4
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Non Demented",
+        "Very mild Dementia"
+      ],
+      "metric_note": "All E08 metrics are calculated from exactly one row per subject."
+    },
+    "majority_vote": {
+      "experiment_id": "E08",
+      "source_experiment": "E07 Attempt 2",
+      "model": "ResNet18",
+      "method": "majority_vote",
+      "evaluation_level": "subject",
+      "number_of_subjects": 29,
+      "positive_class": "Very mild Dementia",
+      "default_threshold": 0.5,
+      "score_column": "positive_vote_fraction",
+      "prediction_column": "majority_vote_predicted_label",
+      "tie_handling_rule": "Majority voting predicts Very mild Dementia only when positive_vote_fraction > 0.5. Exact ties are explicitly flagged and assigned to Non Demented by this strict rule.",
+      "accuracy": 0.6896551724137931,
+      "balanced_accuracy": 0.6740196078431373,
+      "sensitivity": 0.5833333333333334,
+      "recall_positive": 0.5833333333333334,
+      "specificity": 0.7647058823529411,
+      "precision": 0.6363636363636364,
+      "f1_positive": 0.6086956521739131,
+      "f1_macro": 0.675776397515528,
+      "roc_auc": 0.6936274509803921,
+      "pr_auc": 0.5964705433455433,
+      "confusion_matrix": [
+        [
+          13,
+          4
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Non Demented",
+        "Very mild Dementia"
+      ],
+      "metric_note": "All E08 metrics are calculated from exactly one row per subject."
+    }
+  },
+  "best_performing_method_by_selected_descriptive_metrics": {
+    "balanced_accuracy": {
+      "value": 0.7034313725490196,
+      "methods": [
+        "mean_probability"
+      ]
+    },
+    "sensitivity": {
+      "value": 0.5833333333333334,
+      "methods": [
+        "mean_probability",
+        "median_probability",
+        "majority_vote"
+      ]
+    },
+    "specificity": {
+      "value": 0.8235294117647058,
+      "methods": [
+        "mean_probability"
+      ]
+    },
+    "f1_positive": {
+      "value": 0.6363636363636364,
+      "methods": [
+        "mean_probability"
+      ]
+    },
+    "f1_macro": {
+      "value": 0.7070707070707071,
+      "methods": [
+        "mean_probability"
+      ]
+    },
+    "roc_auc": {
+      "value": 0.6936274509803921,
+      "methods": [
+        "majority_vote"
+      ]
+    },
+    "pr_auc": {
+      "value": 0.6007440476190475,
+      "methods": [
+        "mean_probability"
+      ]
+    }
+  },
+  "methodological_recommendation_note": "Do not declare one aggregation method universally superior from this small test set. Interpret sensitivity, specificity, continuous-score metrics and stability together.",
+  "threshold_optimization_performed": false,
+  "threshold_note": "E08 uses only the default 0.5 threshold. No threshold optimization or test-set threshold search was performed.",
+  "important_limitations": [
+    "Metrics are subject-level and use exactly one row per subject.",
+    "The frozen test set contains only 29 subjects.",
+    "E08 does not retrain the CNN, modify the checkpoint, tune thresholds or choose a new checkpoint."
+  ]
+}

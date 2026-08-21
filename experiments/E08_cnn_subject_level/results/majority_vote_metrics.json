@@ -1,0 +1,38 @@
+{
+  "experiment_id": "E08",
+  "source_experiment": "E07 Attempt 2",
+  "model": "ResNet18",
+  "method": "majority_vote",
+  "evaluation_level": "subject",
+  "number_of_subjects": 29,
+  "positive_class": "Very mild Dementia",
+  "default_threshold": 0.5,
+  "score_column": "positive_vote_fraction",
+  "prediction_column": "majority_vote_predicted_label",
+  "tie_handling_rule": "Majority voting predicts Very mild Dementia only when positive_vote_fraction > 0.5. Exact ties are explicitly flagged and assigned to Non Demented by this strict rule.",
+  "accuracy": 0.6896551724137931,
+  "balanced_accuracy": 0.6740196078431373,
+  "sensitivity": 0.5833333333333334,
+  "recall_positive": 0.5833333333333334,
+  "specificity": 0.7647058823529411,
+  "precision": 0.6363636363636364,
+  "f1_positive": 0.6086956521739131,
+  "f1_macro": 0.675776397515528,
+  "roc_auc": 0.6936274509803921,
+  "pr_auc": 0.5964705433455433,
+  "confusion_matrix": [
+    [
+      13,
+      4
+    ],
+    [
+      5,
+      7
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Non Demented",
+    "Very mild Dementia"
+  ],
+  "metric_note": "All E08 metrics are calculated from exactly one row per subject."
+}

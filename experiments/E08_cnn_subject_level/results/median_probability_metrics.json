@@ -1,0 +1,38 @@
+{
+  "experiment_id": "E08",
+  "source_experiment": "E07 Attempt 2",
+  "model": "ResNet18",
+  "method": "median_probability",
+  "evaluation_level": "subject",
+  "number_of_subjects": 29,
+  "positive_class": "Very mild Dementia",
+  "default_threshold": 0.5,
+  "score_column": "median_probability",
+  "prediction_column": "median_predicted_label",
+  "tie_handling_rule": null,
+  "accuracy": 0.6896551724137931,
+  "balanced_accuracy": 0.6740196078431373,
+  "sensitivity": 0.5833333333333334,
+  "recall_positive": 0.5833333333333334,
+  "specificity": 0.7647058823529411,
+  "precision": 0.6363636363636364,
+  "f1_positive": 0.6086956521739131,
+  "f1_macro": 0.675776397515528,
+  "roc_auc": 0.6666666666666666,
+  "pr_auc": 0.5626307720057719,
+  "confusion_matrix": [
+    [
+      13,
+      4
+    ],
+    [
+      5,
+      7
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Non Demented",
+    "Very mild Dementia"
+  ],
+  "metric_note": "All E08 metrics are calculated from exactly one row per subject."
+}

@@ -1,0 +1,30 @@
+subject_id,true_class,true_label,number_of_test_images,mean_probability,median_probability,positive_vote_count,negative_vote_count,positive_vote_fraction,majority_vote_tie,mean_predicted_label,median_predicted_label,majority_vote_predicted_label,mean_predicted_class,median_predicted_class,majority_vote_predicted_class
+OAS1_0019,Non Demented,0,244,0.49837533903290726,0.5390014052391052,128,116,0.5245901639344263,False,0,1,1,Non Demented,Very mild Dementia,Very mild Dementia
+OAS1_0030,Non Demented,0,244,0.3816497119634852,0.25695541501045227,90,154,0.36885245901639346,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0070,Non Demented,0,244,0.3857939753459143,0.2430869713425636,94,150,0.38524590163934425,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0075,Non Demented,0,244,0.32641727430507406,0.12534072995185846,73,171,0.29918032786885246,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0078,Non Demented,0,244,0.17085321416839266,0.0161510021425783,36,208,0.14754098360655737,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0106,Non Demented,0,244,0.04728178740971515,0.0009356474911328,7,237,0.028688524590163935,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0139,Non Demented,0,244,0.01990920106202414,0.00024160385510179998,1,243,0.004098360655737705,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0146,Non Demented,0,244,0.04136191719974329,8.473118214169517e-05,9,235,0.036885245901639344,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0157,Non Demented,0,244,0.20849953367024557,0.02633716166019435,48,196,0.19672131147540983,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0169,Non Demented,0,244,0.063064193010497,0.00536017306149005,9,235,0.036885245901639344,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0186,Non Demented,0,244,0.8998634771692121,0.9918140172958374,225,19,0.9221311475409836,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0256,Non Demented,0,244,0.44584667784714516,0.3184185177087783,112,132,0.45901639344262296,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0299,Non Demented,0,244,0.13580048222892085,0.0163191827014088,26,218,0.10655737704918032,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0326,Non Demented,0,244,0.6458472973729945,0.7943843901157379,162,82,0.6639344262295082,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0342,Non Demented,0,244,0.013780042570043468,0.00015290945884765,0,244,0.0,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0363,Non Demented,0,244,0.8301442196228197,0.9970074594020844,209,35,0.8565573770491803,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0365,Non Demented,0,244,0.17160602498967042,0.022924807853996698,35,209,0.14344262295081966,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0016,Very mild Dementia,1,183,0.550241973942128,0.7088544368743896,102,81,0.5573770491803278,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0021,Very mild Dementia,1,244,0.334305080661261,0.1420701071619987,74,170,0.30327868852459017,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0022,Very mild Dementia,1,244,0.5919264705869521,0.7276857197284698,145,99,0.5942622950819673,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0094,Very mild Dementia,1,244,0.018822628617552198,0.00012789685570165,1,243,0.004098360655737705,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0120,Very mild Dementia,1,244,0.6077803234249631,0.8660762012004852,146,98,0.5983606557377049,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0142,Very mild Dementia,1,244,0.7411110056138389,0.981243908405304,181,63,0.7418032786885246,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0164,Very mild Dementia,1,244,0.15849637650448872,0.0018917961278929999,35,209,0.14344262295081966,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0288,Very mild Dementia,1,244,0.849996644764047,0.9905416071414948,212,32,0.8688524590163934,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0312,Very mild Dementia,1,244,0.4547467670249344,0.37357015907764435,112,132,0.45901639344262296,False,0,0,0,Non Demented,Non Demented,Non Demented
+OAS1_0339,Very mild Dementia,1,244,0.8818079765874618,0.9832421243190764,222,22,0.9098360655737705,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0352,Very mild Dementia,1,183,0.8686064633520453,0.9908806085586548,167,16,0.912568306010929,False,1,1,1,Very mild Dementia,Very mild Dementia,Very mild Dementia
+OAS1_0374,Very mild Dementia,1,244,0.14637788448228958,0.0054256154689937,31,213,0.12704918032786885,False,0,0,0,Non Demented,Non Demented,Non Demented

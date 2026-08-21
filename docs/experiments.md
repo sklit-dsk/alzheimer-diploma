@@ -19,8 +19,8 @@ Do not overwrite historical experiment results when methodology changes.
 | E04 | Subject-level aggregation | Completed |
 | E05 | Threshold and sensitivity-specificity analysis | Current / in progress |
 | E06 | Corrected Feature Importance | Completed |
-| E07 | Transfer-learning CNN | Current / in progress |
-| E08 | CNN subject-level evaluation | Planned |
+| E07 | Transfer-learning CNN | Completed |
+| E08 | CNN subject-level evaluation | Current / in progress |
 | E09 | Random Forest vs CNN comparison | Planned |
 | E10 | Explainability | Optional |
 | E11 | Final information-system evaluation | Planned |
@@ -558,7 +558,7 @@ Threshold behavior must be analyzed in E05 before final model-performance claims
 
 ## Status
 
-Current / in progress.
+Completed.
 
 ## Objective
 
@@ -709,17 +709,67 @@ Final CNN subject-level test evaluation belongs to E08.
 
 E07 must not claim CNN superiority over the Random Forest baseline and must not present the model as clinically validated.
 
+## Confirmed execution status
+
+E07 Attempt 2 completed training and postprocess-only recovery using the locally saved best checkpoint.
+
+The frozen test inference produced:
+
+- `experiments/E07_cnn/results/test_slice_predictions_attempt2.csv`
+
+The file contains 6,954 slice-level predictions for the frozen 29-subject test set.
+
+E07 does not calculate final CNN subject-level metrics. That evaluation belongs to E08.
+
 ---
 
 # E08 — CNN subject-level evaluation
 
 ## Status
 
-Planned.
+Current / in progress.
 
 ## Objective
 
 Evaluate CNN predictions at subject level using the same methodological principles and metrics used for the Random Forest model.
+
+## Planned input
+
+E08 uses the E07 Attempt 2 frozen-test slice prediction table:
+
+- `experiments/E07_cnn/results/test_slice_predictions_attempt2.csv`
+
+## Planned methodology
+
+E08 aggregates CNN slice-level predictions into exactly one row per subject using:
+
+- mean probability;
+- median probability;
+- majority voting.
+
+Very mild Dementia is the positive class.
+
+The default threshold remains `0.5`.
+
+E08 must not retrain the CNN, modify the checkpoint, choose a different checkpoint, optimize thresholds, or use test labels for training decisions.
+
+## Planned outputs
+
+E08 should produce:
+
+- `experiments/E08_cnn_subject_level/results/subject_level_predictions.csv`;
+- subject-level metrics for each aggregation strategy;
+- confusion matrices;
+- `experiments/E08_cnn_subject_level/results/aggregation_comparison.csv`;
+- `experiments/E08_cnn_subject_level/results/e08_summary.json`.
+
+## Interpretation rules
+
+All E08 metrics must be calculated from exactly one row per subject.
+
+The frozen test set contains only 29 subjects, so results must be interpreted cautiously.
+
+E08 must not be marked completed until the script has run successfully and the generated results have been reviewed.
 
 ---
 
