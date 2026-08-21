@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Large/raw datasets
+data/raw/
+data/external/
+data/**/*.zip
+data/**/*.rar
+data/**/*.7z
+data/**/*.nii
+data/**/*.nii.gz
+data/**/*.dcm
+data/**/*.jpg
+data/**/*.jpeg
+data/**/*.png
+
+# Model artifacts
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.keras
+*.onnx
+*.joblib
+*.pkl
+
+# Temporary experiment outputs
+tmp/
+temp/
+cache/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build
+build/
+dist/
+*.egg-info/

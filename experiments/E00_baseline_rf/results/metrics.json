@@ -1,0 +1,56 @@
+{
+  "task": "Non Demented vs Very mild Dementia",
+  "split": "patient-level stratified by subject_id",
+  "seed": 42,
+  "train_size": 21838,
+  "test_size": 5612,
+  "train_class_counts": {
+    "Non Demented": 10919,
+    "Very mild Dementia": 10919
+  },
+  "test_class_counts": {
+    "Very mild Dementia": 2806,
+    "Non Demented": 2806
+  },
+  "accuracy": 0.609408410548824,
+  "balanced_accuracy": 0.609408410548824,
+  "f1_macro": 0.5834085476823754,
+  "roc_auc": 0.7704423978959658,
+  "classification_report": {
+    "Non Demented": {
+      "precision": 0.5729562737642585,
+      "recall": 0.8592302209550963,
+      "f1-score": 0.6874821785001426,
+      "support": 2806.0
+    },
+    "Very mild Dementia": {
+      "precision": 0.7186609686609686,
+      "recall": 0.35958660014255167,
+      "f1-score": 0.47933491686460805,
+      "support": 2806.0
+    },
+    "accuracy": 0.609408410548824,
+    "macro avg": {
+      "precision": 0.6458086212126135,
+      "recall": 0.609408410548824,
+      "f1-score": 0.5834085476823754,
+      "support": 5612.0
+    },
+    "weighted avg": {
+      "precision": 0.6458086212126136,
+      "recall": 0.609408410548824,
+      "f1-score": 0.5834085476823753,
+      "support": 5612.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      2411,
+      395
+    ],
+    [
+      1797,
+      1009
+    ]
+  ]
+}
