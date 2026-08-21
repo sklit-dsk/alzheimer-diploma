@@ -1,0 +1,7 @@
+category,feature_count,mean_permutation_importance_per_feature,mean_positive_permutation_importance_per_feature,mean_rf_impurity_importance_per_feature,rank_by_mean_permutation_importance_per_feature,rank_by_mean_positive_permutation_importance_per_feature,rank_by_mean_rf_impurity_importance_per_feature
+Shape / brain mask geometry,4,0.0021438435495367246,0.003886760513186025,0.01986871764335085,1,1,1
+Global intensity / contrast,6,0.001971222380612967,0.0022385067712045333,0.007376275479003834,2,2,5
+Regional intensity / contrast,64,0.0005150792943692587,0.0016934971935138974,0.011782443578414072,3,3,3
+Texture: Local Binary Pattern,10,-0.0013275124732715399,0.00034301496792586,0.006281122826048979,5,4,6
+Intensity distribution,3,-0.0006979092421001989,0.0,0.012381304735565667,4,5,2
+Edges / structural boundaries,2,-0.00180416963649315,0.0,0.0111179725334409,6,5,4

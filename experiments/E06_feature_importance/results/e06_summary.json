@@ -1,0 +1,232 @@
+{
+  "experiment_id": "E06",
+  "objective": "Corrected grouped Feature Importance analysis",
+  "input_file": "experiments\\E03_clean_rf\\results\\feature_importance.csv",
+  "number_of_features": 89,
+  "category_counts": [
+    {
+      "category": "Edges / structural boundaries",
+      "feature_count": 2
+    },
+    {
+      "category": "Global intensity / contrast",
+      "feature_count": 6
+    },
+    {
+      "category": "Intensity distribution",
+      "feature_count": 3
+    },
+    {
+      "category": "Regional intensity / contrast",
+      "feature_count": 64
+    },
+    {
+      "category": "Shape / brain mask geometry",
+      "feature_count": 4
+    },
+    {
+      "category": "Texture: Local Binary Pattern",
+      "feature_count": 10
+    }
+  ],
+  "top_category_by_corrected_metric": {
+    "mean_permutation_importance_per_feature": {
+      "metric": "mean_permutation_importance_per_feature",
+      "value": 0.0021438435495367246,
+      "categories": [
+        "Shape / brain mask geometry"
+      ]
+    },
+    "mean_positive_permutation_importance_per_feature": {
+      "metric": "mean_positive_permutation_importance_per_feature",
+      "value": 0.003886760513186025,
+      "categories": [
+        "Shape / brain mask geometry"
+      ]
+    },
+    "mean_rf_impurity_importance_per_feature": {
+      "metric": "mean_rf_impurity_importance_per_feature",
+      "value": 0.01986871764335085,
+      "categories": [
+        "Shape / brain mask geometry"
+      ]
+    }
+  },
+  "top_individual_features": [
+    {
+      "rank": 1,
+      "feature": "roi_r1_c1_std",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.013052387740556,
+      "permutation_importance_std": 0.0045801571855406,
+      "rf_impurity_importance": 0.0274878006362701
+    },
+    {
+      "rank": 2,
+      "feature": "roi_r4_c1_std",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0111368496079829,
+      "permutation_importance_std": 0.0013888504337241,
+      "rf_impurity_importance": 0.024030816612524
+    },
+    {
+      "rank": 3,
+      "feature": "roi_r4_c1_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0109809337134711,
+      "permutation_importance_std": 0.0024993234420792,
+      "rf_impurity_importance": 0.0262393686322865
+    },
+    {
+      "rank": 4,
+      "feature": "centroid_x",
+      "category": "Shape / brain mask geometry",
+      "permutation_importance_mean": 0.0089094796863863,
+      "permutation_importance_std": 0.0019025442359286,
+      "rf_impurity_importance": 0.0316103980094324
+    },
+    {
+      "rank": 5,
+      "feature": "roi_r4_c3_std",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0088649322879544,
+      "permutation_importance_std": 0.0017924447201292,
+      "rf_impurity_importance": 0.0249813146275191
+    },
+    {
+      "rank": 6,
+      "feature": "roi_r2_c8_std",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0084194583036351,
+      "permutation_importance_std": 0.0020908823418926,
+      "rf_impurity_importance": 0.0093382691771002
+    },
+    {
+      "rank": 7,
+      "feature": "roi_r2_c8_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0062366357804704,
+      "permutation_importance_std": 0.001007992560494,
+      "rf_impurity_importance": 0.0095821255601681
+    },
+    {
+      "rank": 8,
+      "feature": "roi_r1_c6_std",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0051452245188881,
+      "permutation_importance_std": 0.0008884386437624,
+      "rf_impurity_importance": 0.012044233088683
+    },
+    {
+      "rank": 9,
+      "feature": "roi_r2_c1_std",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0050784034212402,
+      "permutation_importance_std": 0.0013453019307325,
+      "rf_impurity_importance": 0.0155939072143284
+    },
+    {
+      "rank": 10,
+      "feature": "roi_r1_c1_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0048333927298646,
+      "permutation_importance_std": 0.0026897739831144,
+      "rf_impurity_importance": 0.027220869156501
+    },
+    {
+      "rank": 11,
+      "feature": "bbox_area_ratio",
+      "category": "Shape / brain mask geometry",
+      "permutation_importance_mean": 0.0047442979330007,
+      "permutation_importance_std": 0.0006954960351031,
+      "rf_impurity_importance": 0.0146911014904033
+    },
+    {
+      "rank": 12,
+      "feature": "roi_r4_c2_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0044770135424091,
+      "permutation_importance_std": 0.0013107461671244,
+      "rf_impurity_importance": 0.0144935561207014
+    },
+    {
+      "rank": 13,
+      "feature": "global_iqr",
+      "category": "Global intensity / contrast",
+      "permutation_importance_mean": 0.0041429080541696,
+      "permutation_importance_std": 0.0006886860670768,
+      "rf_impurity_importance": 0.0068174834758058
+    },
+    {
+      "rank": 14,
+      "feature": "roi_r3_c3_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0037865288667142,
+      "permutation_importance_std": 0.0007333427313415,
+      "rf_impurity_importance": 0.0094146373597256
+    },
+    {
+      "rank": 15,
+      "feature": "global_mean",
+      "category": "Global intensity / contrast",
+      "permutation_importance_mean": 0.0034301496792587,
+      "permutation_importance_std": 0.0011676178209267,
+      "rf_impurity_importance": 0.0079989410080346
+    },
+    {
+      "rank": 16,
+      "feature": "roi_r1_c7_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0034078759800428,
+      "permutation_importance_std": 0.0010330291006152,
+      "rf_impurity_importance": 0.0132566048053285
+    },
+    {
+      "rank": 17,
+      "feature": "global_p50",
+      "category": "Global intensity / contrast",
+      "permutation_importance_mean": 0.0032965074839629,
+      "permutation_importance_std": 0.0013859897706792,
+      "rf_impurity_importance": 0.0064898335830553
+    },
+    {
+      "rank": 18,
+      "feature": "roi_r3_c8_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.002606022808268,
+      "permutation_importance_std": 0.0011511430469905,
+      "rf_impurity_importance": 0.0074743092456463
+    },
+    {
+      "rank": 19,
+      "feature": "roi_r3_c4_mean",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.002583749109052,
+      "permutation_importance_std": 0.0010466268820804,
+      "rf_impurity_importance": 0.0082199548046768
+    },
+    {
+      "rank": 20,
+      "feature": "roi_r2_c6_std",
+      "category": "Regional intensity / contrast",
+      "permutation_importance_mean": 0.0023610121168924,
+      "permutation_importance_std": 0.0007224373993329,
+      "rf_impurity_importance": 0.0099853044394331
+    }
+  ],
+  "legacy_vs_corrected_interpretation_note": "The legacy E03 category summary uses unadjusted summed positive permutation importance. That is useful for preserving E00-style comparability, but it can favor larger feature groups. E06 reports mean-per-feature summaries as the main corrected grouped comparison.",
+  "ranking_difference_note": "The same category is top-ranked by the corrected mean raw permutation, mean positive permutation, and mean RF impurity measures. This does not make the category a medical finding.",
+  "limitations": [
+    "Feature Importance measures model reliance, not clinical causality.",
+    "High importance does not prove a medical biomarker.",
+    "Handcrafted image features are algorithmic descriptors.",
+    "Permutation importance is evaluated on the E03 image-level test data.",
+    "Correlated features may share or redistribute importance.",
+    "RF impurity importance can favor certain feature types and should not be interpreted alone.",
+    "Category comparison should account for the number of features in each category.",
+    "Final medical interpretation is outside the scope of this experiment."
+  ],
+  "no_medical_biomarkers_identified": true,
+  "no_medical_biomarker_statement": "E06 identifies model-used image feature patterns only; no medical biomarkers are identified.",
+  "importance_measure_note": "No single importance measure is treated as universally correct. Permutation and RF impurity importance answer related but different questions."
+}

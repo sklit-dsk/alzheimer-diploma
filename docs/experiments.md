@@ -18,7 +18,7 @@ Do not overwrite historical experiment results when methodology changes.
 | E03 | Clean Random Forest baseline | Completed |
 | E04 | Subject-level aggregation | Completed |
 | E05 | Threshold and sensitivity-specificity analysis | Current / in progress |
-| E06 | Corrected Feature Importance | Planned |
+| E06 | Corrected Feature Importance | Current / in progress |
 | E07 | Transfer-learning CNN | Planned |
 | E08 | CNN subject-level evaluation | Planned |
 | E09 | Random Forest vs CNN comparison | Planned |
@@ -615,7 +615,7 @@ Validated threshold selection would require an independent validation cohort or 
 
 ## Status
 
-Planned.
+Current / in progress.
 
 ## Objective
 
@@ -628,6 +628,35 @@ For each feature group, record:
 - normalized or mean importance per feature.
 
 Interpret the results as image characteristics used by the model, not as confirmed medical biomarkers.
+
+## Planned input
+
+E06 uses the E03 feature-importance outputs:
+
+- `experiments/E03_clean_rf/results/feature_importance.csv`;
+- `experiments/E03_clean_rf/results/legacy_unadjusted_category_importance.csv`.
+
+E06 must not retrain the Random Forest or modify E03 predictions and metrics.
+
+## Planned methodology
+
+E06 preserves the raw per-feature E03 importance values and creates corrected grouped summaries that account for the number of features in each category.
+
+The main corrected grouped comparisons are:
+
+- mean permutation importance per feature;
+- mean positive permutation importance per feature;
+- mean RF impurity importance per feature.
+
+Legacy summed category importance is retained only as an unadjusted comparison. It should be described as potentially biased toward larger feature groups, not as a final corrected grouped interpretation.
+
+## Interpretation rules
+
+Feature Importance measures model reliance, not clinical causality.
+
+High feature importance must not be interpreted as proof of a medical biomarker.
+
+Regional image-grid features may be described only as image regions whose handcrafted features contributed to the model, not as disease regions or clinically confirmed anatomical findings.
 
 ---
 
